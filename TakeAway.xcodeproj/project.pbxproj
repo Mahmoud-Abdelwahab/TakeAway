@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CC82A1EC4B961DB87678B75 /* Pods_TakeAwayAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F739F6B64053E16AFF368608 /* Pods_TakeAwayAdmin.framework */; };
+		77B828BAC354EC284597CF99 /* Pods_TakeAway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CCA488A5F5D195B5919D89 /* Pods_TakeAway.framework */; };
 		BB0B058424F04BFD006AB838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B058324F04BFD006AB838 /* AppDelegate.swift */; };
 		BB0B058624F04BFD006AB838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B058524F04BFD006AB838 /* SceneDelegate.swift */; };
-		BB0B058824F04BFD006AB838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B058724F04BFD006AB838 /* ViewController.swift */; };
+		BB0B058824F04BFD006AB838 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B058724F04BFD006AB838 /* HomeVC.swift */; };
 		BB0B058B24F04BFD006AB838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0B058924F04BFD006AB838 /* Main.storyboard */; };
 		BB0B058D24F04C00006AB838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0B058C24F04C00006AB838 /* Assets.xcassets */; };
 		BB0B059024F04C00006AB838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0B058E24F04C00006AB838 /* LaunchScreen.storyboard */; };
@@ -17,17 +19,26 @@
 		BB0B05A024F04C9F006AB838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B059F24F04C9F006AB838 /* SceneDelegate.swift */; };
 		BB0B05A224F04C9F006AB838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B05A124F04C9F006AB838 /* ViewController.swift */; };
 		BB0B05A524F04C9F006AB838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0B05A324F04C9F006AB838 /* Main.storyboard */; };
-		BB0B05A724F04CA0006AB838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0B05A624F04CA0006AB838 /* Assets.xcassets */; };
 		BB0B05AA24F04CA0006AB838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0B05A824F04CA0006AB838 /* LaunchScreen.storyboard */; };
 		BB0B05B124F04CCD006AB838 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B05B024F04CCD006AB838 /* Constants.swift */; };
 		BB0B05B224F04CCD006AB838 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B05B024F04CCD006AB838 /* Constants.swift */; };
+		BB9352A024F069DC00400913 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93529F24F069DC00400913 /* LoginVC.swift */; };
+		BB9352A124F069DC00400913 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93529F24F069DC00400913 /* LoginVC.swift */; };
+		BB9352A224F069EE00400913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0B058C24F04C00006AB838 /* Assets.xcassets */; };
+		BB9352A424F06A2500400913 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9352A324F06A2500400913 /* LoginVC.storyboard */; };
+		BB9352A524F06A2500400913 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB9352A324F06A2500400913 /* LoginVC.storyboard */; };
+		BB9352A724F06A6F00400913 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9352A624F06A6F00400913 /* RegistrationVC.swift */; };
+		BB9352A824F06A6F00400913 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9352A624F06A6F00400913 /* RegistrationVC.swift */; };
+		BB9352AA24F06C5A00400913 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B058724F04BFD006AB838 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E6ADA6EF2B68E559A6268B1 /* Pods-TakeAwayAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAwayAdmin.debug.xcconfig"; path = "Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin.debug.xcconfig"; sourceTree = "<group>"; };
+		4ADEB6C517117F4BC5510401 /* Pods-TakeAway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAway.debug.xcconfig"; path = "Target Support Files/Pods-TakeAway/Pods-TakeAway.debug.xcconfig"; sourceTree = "<group>"; };
 		BB0B058024F04BFD006AB838 /* TakeAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0B058324F04BFD006AB838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB0B058524F04BFD006AB838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB0B058724F04BFD006AB838 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB0B058724F04BFD006AB838 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BB0B058A24F04BFD006AB838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB0B058C24F04C00006AB838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB0B058F24F04C00006AB838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,10 +48,16 @@
 		BB0B059F24F04C9F006AB838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BB0B05A124F04C9F006AB838 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB0B05A424F04C9F006AB838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BB0B05A624F04CA0006AB838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB0B05A924F04CA0006AB838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB0B05AB24F04CA0006AB838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB0B05B024F04CCD006AB838 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BB93529F24F069DC00400913 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BB9352A324F06A2500400913 /* LoginVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
+		BB9352A624F06A6F00400913 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		E53B631C2A869CEF1CE911D9 /* Pods-TakeAway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAway.release.xcconfig"; path = "Target Support Files/Pods-TakeAway/Pods-TakeAway.release.xcconfig"; sourceTree = "<group>"; };
+		F4CCA488A5F5D195B5919D89 /* Pods_TakeAway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F739F6B64053E16AFF368608 /* Pods_TakeAwayAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAwayAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE183C26F9100CF8AD01637 /* Pods-TakeAwayAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAwayAdmin.release.xcconfig"; path = "Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77B828BAC354EC284597CF99 /* Pods_TakeAway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +73,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CC82A1EC4B961DB87678B75 /* Pods_TakeAwayAdmin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A117CDA9FA0E5078309DADA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4CCA488A5F5D195B5919D89 /* Pods_TakeAway.framework */,
+				F739F6B64053E16AFF368608 /* Pods_TakeAwayAdmin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB0B057724F04BFD006AB838 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +96,8 @@
 				BB0B058224F04BFD006AB838 /* TakeAway */,
 				BB0B059C24F04C9F006AB838 /* TakeAwayAdmin */,
 				BB0B058124F04BFD006AB838 /* Products */,
+				F6E08039F75F7412EA0BF2A5 /* Pods */,
+				5A117CDA9FA0E5078309DADA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,11 +113,10 @@
 		BB0B058224F04BFD006AB838 /* TakeAway */ = {
 			isa = PBXGroup;
 			children = (
+				BB0B058724F04BFD006AB838 /* HomeVC.swift */,
 				BB0B058324F04BFD006AB838 /* AppDelegate.swift */,
 				BB0B058524F04BFD006AB838 /* SceneDelegate.swift */,
-				BB0B058724F04BFD006AB838 /* ViewController.swift */,
 				BB0B058924F04BFD006AB838 /* Main.storyboard */,
-				BB0B058C24F04C00006AB838 /* Assets.xcassets */,
 				BB0B058E24F04C00006AB838 /* LaunchScreen.storyboard */,
 				BB0B059124F04C00006AB838 /* Info.plist */,
 			);
@@ -101,7 +130,6 @@
 				BB0B059F24F04C9F006AB838 /* SceneDelegate.swift */,
 				BB0B05A124F04C9F006AB838 /* ViewController.swift */,
 				BB0B05A324F04C9F006AB838 /* Main.storyboard */,
-				BB0B05A624F04CA0006AB838 /* Assets.xcassets */,
 				BB0B05A824F04CA0006AB838 /* LaunchScreen.storyboard */,
 				BB0B05AB24F04CA0006AB838 /* Info.plist */,
 			);
@@ -111,9 +139,57 @@
 		BB0B05AF24F04CAA006AB838 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BB0B058C24F04C00006AB838 /* Assets.xcassets */,
 				BB0B05B024F04CCD006AB838 /* Constants.swift */,
+				BB93529D24F0698400400913 /* Models */,
+				BB93529C24F0696700400913 /* ViewControllers */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		BB93529C24F0696700400913 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB9352A924F06A7400400913 /* RegistrationVC */,
+				BB93529E24F0699F00400913 /* Login */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BB93529D24F0698400400913 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB93529E24F0699F00400913 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BB93529F24F069DC00400913 /* LoginVC.swift */,
+				BB9352A324F06A2500400913 /* LoginVC.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BB9352A924F06A7400400913 /* RegistrationVC */ = {
+			isa = PBXGroup;
+			children = (
+				BB9352A624F06A6F00400913 /* RegistrationVC.swift */,
+			);
+			path = RegistrationVC;
+			sourceTree = "<group>";
+		};
+		F6E08039F75F7412EA0BF2A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4ADEB6C517117F4BC5510401 /* Pods-TakeAway.debug.xcconfig */,
+				E53B631C2A869CEF1CE911D9 /* Pods-TakeAway.release.xcconfig */,
+				0E6ADA6EF2B68E559A6268B1 /* Pods-TakeAwayAdmin.debug.xcconfig */,
+				FCE183C26F9100CF8AD01637 /* Pods-TakeAwayAdmin.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB0B059424F04C00006AB838 /* Build configuration list for PBXNativeTarget "TakeAway" */;
 			buildPhases = (
+				310D8CC74F0D411855257227 /* [CP] Check Pods Manifest.lock */,
 				BB0B057C24F04BFD006AB838 /* Sources */,
 				BB0B057D24F04BFD006AB838 /* Frameworks */,
 				BB0B057E24F04BFD006AB838 /* Resources */,
+				E50555A647A40A1B44B1B1B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB0B05AC24F04CA0006AB838 /* Build configuration list for PBXNativeTarget "TakeAwayAdmin" */;
 			buildPhases = (
+				12071CD45219BFAD2B126129 /* [CP] Check Pods Manifest.lock */,
 				BB0B059724F04C9F006AB838 /* Sources */,
 				BB0B059824F04C9F006AB838 /* Frameworks */,
 				BB0B059924F04C9F006AB838 /* Resources */,
+				4ABD3DF691B5172FE58FCCAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +278,7 @@
 				BB0B059024F04C00006AB838 /* LaunchScreen.storyboard in Resources */,
 				BB0B058D24F04C00006AB838 /* Assets.xcassets in Resources */,
 				BB0B058B24F04BFD006AB838 /* Main.storyboard in Resources */,
+				BB9352A424F06A2500400913 /* LoginVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,22 +287,106 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0B05AA24F04CA0006AB838 /* LaunchScreen.storyboard in Resources */,
-				BB0B05A724F04CA0006AB838 /* Assets.xcassets in Resources */,
+				BB9352A224F069EE00400913 /* Assets.xcassets in Resources */,
 				BB0B05A524F04C9F006AB838 /* Main.storyboard in Resources */,
+				BB9352A524F06A2500400913 /* LoginVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12071CD45219BFAD2B126129 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakeAwayAdmin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		310D8CC74F0D411855257227 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakeAway-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4ABD3DF691B5172FE58FCCAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E50555A647A40A1B44B1B1B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeAway/Pods-TakeAway-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeAway/Pods-TakeAway-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TakeAway/Pods-TakeAway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BB0B057C24F04BFD006AB838 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB0B058824F04BFD006AB838 /* ViewController.swift in Sources */,
+				BB0B058824F04BFD006AB838 /* HomeVC.swift in Sources */,
+				BB9352A724F06A6F00400913 /* RegistrationVC.swift in Sources */,
 				BB0B058424F04BFD006AB838 /* AppDelegate.swift in Sources */,
 				BB0B058624F04BFD006AB838 /* SceneDelegate.swift in Sources */,
 				BB0B05B124F04CCD006AB838 /* Constants.swift in Sources */,
+				BB9352A024F069DC00400913 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,9 +395,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB0B05A224F04C9F006AB838 /* ViewController.swift in Sources */,
+				BB9352AA24F06C5A00400913 /* HomeVC.swift in Sources */,
+				BB9352A824F06A6F00400913 /* RegistrationVC.swift in Sources */,
 				BB0B059E24F04C9F006AB838 /* AppDelegate.swift in Sources */,
 				BB0B05A024F04C9F006AB838 /* SceneDelegate.swift in Sources */,
 				BB0B05B224F04CCD006AB838 /* Constants.swift in Sources */,
+				BB9352A124F069DC00400913 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +558,7 @@
 		};
 		BB0B059524F04C00006AB838 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ADEB6C517117F4BC5510401 /* Pods-TakeAway.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -408,6 +577,7 @@
 		};
 		BB0B059624F04C00006AB838 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E53B631C2A869CEF1CE911D9 /* Pods-TakeAway.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -426,6 +596,7 @@
 		};
 		BB0B05AD24F04CA0006AB838 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E6ADA6EF2B68E559A6268B1 /* Pods-TakeAwayAdmin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +614,7 @@
 		};
 		BB0B05AE24F04CA0006AB838 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCE183C26F9100CF8AD01637 /* Pods-TakeAwayAdmin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

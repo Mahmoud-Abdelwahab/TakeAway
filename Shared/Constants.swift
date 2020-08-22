@@ -7,3 +7,6 @@
 //
 
 import Foundation
+enum Storyboard {
+    static let  LoginVC  = "LoginVC"
+}
