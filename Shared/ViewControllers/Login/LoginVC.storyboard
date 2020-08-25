@@ -60,6 +60,9 @@
                                                             <state key="normal" title="Login">
                                                                 <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapLogin:" destination="BVM-UU-4pM" eventType="touchUpInside" id="zaL-Db-83z"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0b6-oD-qk6">
                                                             <rect key="frame" x="0.0" y="285.5" width="334" height="41"/>
@@ -67,6 +70,9 @@
                                                             <state key="normal" title="Register">
                                                                 <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapRegisterBtn:" destination="BVM-UU-4pM" eventType="touchUpInside" id="xg9-bo-O0p"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDQ-TU-fec">
                                                             <rect key="frame" x="0.0" y="356.5" width="334" height="41.5"/>
@@ -74,6 +80,9 @@
                                                             <state key="normal" title="Forget Password ? ">
                                                                 <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapForgetPassword:" destination="BVM-UU-4pM" eventType="touchUpInside" id="yE1-ix-4de"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -106,6 +115,10 @@
                             <outlet property="delegate" destination="BVM-UU-4pM" id="aJa-fb-Zhx"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="emailField" destination="83o-nP-7G3" id="yGp-Rm-9vb"/>
+                        <outlet property="passwordField" destination="kKJ-es-C8O" id="Zou-47-IMl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiG-Ou-gmo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,6 +188,9 @@
                                                             <state key="normal" title="Register">
                                                                 <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapRegister:" destination="K75-b4-hIe" eventType="touchUpInside" id="xmF-YN-r3k"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AwO-OK-BIL">
                                                             <rect key="frame" x="0.0" y="409.5" width="334" height="38.5"/>
@@ -182,17 +198,20 @@
                                                             <state key="normal" title="Login">
                                                                 <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapLogin:" destination="K75-b4-hIe" eventType="touchUpInside" id="ver-9h-dk0"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-checked-24" translatesAutoresizingMaskIntoConstraints="NO" id="ZNX-hz-nC7">
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-checked-24" translatesAutoresizingMaskIntoConstraints="NO" id="ZNX-hz-nC7">
                                                     <rect key="frame" x="344" y="232.5" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="pJj-xh-zdF"/>
                                                         <constraint firstAttribute="height" constant="25" id="sVO-Au-lWD"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-checked-24" translatesAutoresizingMaskIntoConstraints="NO" id="gO1-Ug-F7c">
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-checked-24" translatesAutoresizingMaskIntoConstraints="NO" id="gO1-Ug-F7c">
                                                     <rect key="frame" x="344" y="301" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="2yn-Fl-hhq"/>
@@ -232,6 +251,15 @@
                             <outlet property="delegate" destination="K75-b4-hIe" id="eR2-zk-uuS"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Xks-H0-yHv"/>
+                    <connections>
+                        <outlet property="checkConfirmPasswordImage" destination="gO1-Ug-F7c" id="We1-Ob-iwT"/>
+                        <outlet property="checkPasswordImage" destination="ZNX-hz-nC7" id="0Ep-TU-wOd"/>
+                        <outlet property="confirmPasswordField" destination="5kU-8A-K7e" id="NxD-i8-KeZ"/>
+                        <outlet property="emailField" destination="9Eo-Kx-wRE" id="fAi-fZ-8bs"/>
+                        <outlet property="passwordField" destination="0Bb-2s-p7p" id="3mU-2j-eVF"/>
+                        <outlet property="usernameField" destination="pf9-6Q-MWU" id="fiR-hr-N3Z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwZ-IN-OQ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

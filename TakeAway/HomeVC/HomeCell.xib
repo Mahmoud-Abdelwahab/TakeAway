@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="170" id="KGk-i7-Jjw" customClass="HomeCell" customModule="TakeAway" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="255" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="255" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza cat" translatesAutoresizingMaskIntoConstraints="NO" id="aRe-2G-wzS">
+                        <rect key="frame" x="5" y="5" width="245" height="94"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-Hj-57e">
+                        <rect key="frame" x="73.5" y="23" width="108" height="58.5"/>
+                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="45"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="A1s-Hj-57e" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1sN-e4-0do"/>
+                    <constraint firstItem="aRe-2G-wzS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ak1-yz-Aiv"/>
+                    <constraint firstItem="A1s-Hj-57e" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gmg-dt-RzR"/>
+                    <constraint firstAttribute="trailing" secondItem="aRe-2G-wzS" secondAttribute="trailing" constant="5" id="Goe-a5-xfT"/>
+                    <constraint firstItem="aRe-2G-wzS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="tTV-Jf-HEQ"/>
+                    <constraint firstAttribute="bottom" secondItem="aRe-2G-wzS" secondAttribute="bottom" constant="5" id="v1S-Xi-vTd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryImage" destination="aRe-2G-wzS" id="fcw-p5-ADx"/>
+                <outlet property="categoryName" destination="A1s-Hj-57e" id="ond-su-V9x"/>
+            </connections>
+            <point key="canvasLocation" x="163.04347826086959" y="89.732142857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pizza cat" width="400" height="267"/>
+    </resources>
+</document>

@@ -1,20 +1,21 @@
 //
-//  ViewController.swift
+//  AdminProductVC.swift
 //  TakeAwayAdmin
 //
-//  Created by kasper on 8/21/20.
+//  Created by kasper on 8/24/20.
 //  Copyright © 2020 Mahmoud Abdul-Wahab. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class AdminProductVC: ProductVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+     
+        
     }
+    
 
 
 }
-
