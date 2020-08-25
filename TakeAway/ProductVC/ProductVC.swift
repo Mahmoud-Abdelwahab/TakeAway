@@ -10,14 +10,15 @@ import UIKit
 import FirebaseFirestore
 
 class ProductVC: UIViewController {
-   
+    
     var productList : [Products] = []
-      var filteredProductList : [Products] = []
-      var isSearchActive : Bool = false
+    var filteredProductList : [Products] = []
+    var isSearchActive : Bool = false
     
     var categoryId : String?
     
     @IBOutlet weak var productCollection: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,8 @@ class ProductVC: UIViewController {
         configureCollection()
         loadProduct(with : categoryId!)
     }
-
+    
+    
     private func configureCollection(){
         productCollection.dataSource = self
         productCollection.delegate   = self
@@ -54,57 +56,58 @@ class ProductVC: UIViewController {
         
     }
     
+    
     func loadProduct(with categoryId : String ){
         
         let dbRef = Firestore.firestore().collection("Products").whereField("categoryId", isEqualTo: categoryId).order(by: "timeStamp", descending: true).getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
-                        let data = document.data()
-                                  let product = Products.init(data: data)
-                                   self.productList.append(product)
-                                   self.productCollection.reloadData()
-                    }
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    let data = document.data()
+                    let product = Products.init(data: data)
+                    self.productList.append(product)
+                    self.productCollection.reloadData()
                 }
+            }
         }
         
-        
-    
-    
     }
     
+    
     func configureSearchControler() {
-         
-         let mySearchControler                                   = UISearchController()
-         mySearchControler.searchResultsUpdater                  = self // ue need to conform this delegate  wihich is used for detecting any update in thr search feild
-         mySearchControler.searchBar.placeholder                 = "Search By Name"
-         navigationItem.searchController                         = mySearchControler // naviagtion item has a search controler and it's optional
-         mySearchControler.searchBar.delegate                    = self /// for handeling cancel button
-         
-         mySearchControler.obscuresBackgroundDuringPresentation  = false
-         // this for hidding the littel blureing which appear over the collectionView when u type somthing in the searchBar
-         
-         
-     }
-
+        
+        let mySearchControler                                   = UISearchController()
+        mySearchControler.searchResultsUpdater                  = self // ue need to conform this delegate  wihich is used for detecting any update in thr search feild
+        mySearchControler.searchBar.placeholder                 = "Search By Name"
+        navigationItem.searchController                         = mySearchControler // naviagtion item has a search controler and it's optional
+        mySearchControler.searchBar.delegate                    = self /// for handeling cancel button
+        
+        mySearchControler.obscuresBackgroundDuringPresentation  = false
+        // this for hidding the littel blureing which appear over the collectionView when u type somthing in the searchBar
+        
+        
+    }
+    
 }
 
 
 extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          if isSearchActive {
-                  return filteredProductList.count
-              }else{
-                  return productList.count
-              }
+        if isSearchActive {
+            return filteredProductList.count
+        }else{
+            return productList.count
+        }
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = productCollection.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
-       
+        
         
         if isSearchActive {
             cell.product  = filteredProductList[indexPath.row]
@@ -114,8 +117,6 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
         return cell
     }
     
-    
-    
 }
 
 
@@ -123,27 +124,25 @@ extension ProductVC : UISearchResultsUpdating , UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        //        guard let filter = searchController.searchBar.text , !filter.isEmpty  else {
-        //            // this code handle a bug when u delelte  character by character from the search bar unti it becomes empty the displayed array will be the filltered so u will find bug when u click in some of the user cards
-        //            filterebFollowers.removeAll()
-        //            updataData(on: followersList)
-        //            isSearchActive  = false
-        //            return
-        //
-        //        }
-        //        isSearchActive  = true
-        //        filteredCategoryList = categoryList.filter{$0.name.lowercased().contains(filter.lowercased())}
-        //        // this called map reduce
-        //        //$0 this is the follower object in every loop in the array
-        //        updataData(on: filterebFollowers)
+        guard let filter = searchController.searchBar.text , !filter.isEmpty  else {
+            // this code handle a bug when u delelte  character by character from the search bar unti it becomes empty the displayed array will be the filltered so u will find bug when u click in some of the user cards
+            filteredProductList.removeAll()
+            isSearchActive  = false
+            productCollection.reloadData()
+            return
+            
+        }
+        isSearchActive  = true
+        filteredProductList = productList.filter{$0.name!.lowercased().contains(filter.lowercased())}
+        // this called map reduce
+        //$0 this is the follower object in every loop in the array
+        productCollection.reloadData()
     }
     
-    //
-    
-    //    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    //        isSearchActive = false
-    //        updataData(on: followersList)
-    //
-    //    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearchActive = false
+        productCollection.reloadData()
+        
+    }
     
 }
