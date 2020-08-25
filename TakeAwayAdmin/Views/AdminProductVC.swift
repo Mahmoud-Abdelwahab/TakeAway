@@ -21,5 +21,9 @@ class AdminProductVC: ProductVC {
     
     navigationController?.pushViewController(addNewProductVC, animated: true)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 
 }

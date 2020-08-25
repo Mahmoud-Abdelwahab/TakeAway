@@ -170,6 +170,7 @@
                     </view>
                     <connections>
                         <outlet property="productDescreptionField" destination="G1L-io-dig" id="Hxs-qm-ZhN"/>
+                        <outlet property="productImage" destination="h7I-Bm-tnW" id="3ot-x5-GYz"/>
                         <outlet property="productNameField" destination="QzI-qA-eJV" id="c57-bw-Ym1"/>
                         <outlet property="productPriceField" destination="SpK-87-vYl" id="Teb-dr-kQt"/>
                         <outlet property="stockField" destination="nXU-fc-lAV" id="ebQ-S0-PEc"/>

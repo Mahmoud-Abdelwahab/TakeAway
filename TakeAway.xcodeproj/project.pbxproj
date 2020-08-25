@@ -61,6 +61,7 @@
 		BBB764CD24F3793D00EBBD1B /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB764C924F3793D00EBBD1B /* HomeCell.xib */; };
 		BBD63AB624F4C2D3004AB598 /* AdminHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB524F4C2D3004AB598 /* AdminHomeVC.swift */; };
 		BBD63AB924F4E414004AB598 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */; };
+		BBD63ABB24F4FCC0004AB598 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -556,6 +557,7 @@
 				BB9B87A524F38CE5000EFB25 /* ProductCell.swift in Sources */,
 				BB9B879924F38C42000EFB25 /* AddCategoryVC.swift in Sources */,
 				BB9352A124F069DC00400913 /* LoginVC.swift in Sources */,
+				BBD63ABB24F4FCC0004AB598 /* ProductDetailsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
