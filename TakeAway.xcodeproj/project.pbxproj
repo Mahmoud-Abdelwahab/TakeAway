@@ -163,9 +163,9 @@
 		BB0B058224F04BFD006AB838 /* TakeAway */ = {
 			isa = PBXGroup;
 			children = (
-				BBD63AB724F4E3CD004AB598 /* ProductDetails */,
 				BBB764C724F378D000EBBD1B /* HomeVC */,
 				BB9B879E24F38CA0000EFB25 /* ProductVC */,
+				BBD63AB724F4E3CD004AB598 /* ProductDetails */,
 				BB0B058324F04BFD006AB838 /* AppDelegate.swift */,
 				BB0B058524F04BFD006AB838 /* SceneDelegate.swift */,
 				BB0B058924F04BFD006AB838 /* Main.storyboard */,

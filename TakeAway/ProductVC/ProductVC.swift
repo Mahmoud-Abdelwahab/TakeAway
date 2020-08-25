@@ -117,6 +117,13 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
+        productDetailsVC.product = productList[indexPath.row]
+        
+        navigationController?.pushViewController(productDetailsVC, animated: true)
+    }
+    
 }
 
 

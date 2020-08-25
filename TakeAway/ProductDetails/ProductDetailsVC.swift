@@ -11,12 +11,7 @@ import  Kingfisher
 
 class ProductDetailsVC: UIViewController {
     
-    var product:Products?{
-        didSet{
-            configureForm(with: product!)
-        }
-    }
-    
+    var product:Products?
     @IBOutlet weak var productName: UILabel!
     
     @IBOutlet weak var productDescription: UILabel!
@@ -25,7 +20,7 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet weak var productImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         configureForm(with: product!)
     }
     
     @IBAction func onAddProductToCartClicked(_ sender: Any) {
