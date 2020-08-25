@@ -12,10 +12,14 @@ class AdminProductVC: ProductVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "Add Product", style: .done, target: self, action: #selector(didTapAddProduct)), animated: true)
         
     }
     
-
+   @objc func didTapAddProduct()  {
+    let addNewProductVC = self.storyboard?.instantiateViewController(withIdentifier: "AddProductVC") as! AddProductVC
+    
+    navigationController?.pushViewController(addNewProductVC, animated: true)
+    }
 
 }
