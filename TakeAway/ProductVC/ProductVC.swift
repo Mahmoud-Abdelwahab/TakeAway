@@ -38,7 +38,7 @@ class ProductVC: UIViewController {
     func configureCollectionViewFlowlayout() {
         
         let padding : CGFloat             = 10
-        let numberOfItemPerRow : CGFloat  = 2
+        let numberOfItemPerRow : CGFloat  = 1
         let lineSpacing: CGFloat          = 5
         let interItemSpacing : CGFloat    = 5
         

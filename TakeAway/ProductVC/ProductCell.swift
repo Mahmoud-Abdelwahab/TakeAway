@@ -13,6 +13,7 @@ class ProductCell: UICollectionViewCell {
  
     static let identifier = "ProductCell"
     
+    @IBOutlet weak var descriptionLable: UILabel!
     @IBOutlet weak var productNameText: UILabel!
     @IBOutlet weak var productPriceText: UILabel!
     
@@ -38,6 +39,7 @@ class ProductCell: UICollectionViewCell {
         
         productNameText.text = product.name
         productPriceText.text =  "\(product.price)"
+        descriptionLable.text = product.productDescription
         guard  let url = URL(string: product.imgURL!) else {
             return
         }
