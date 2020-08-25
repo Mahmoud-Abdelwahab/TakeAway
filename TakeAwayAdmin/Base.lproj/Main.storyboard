@@ -103,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="whK-KQ-YTK">
-                                                <rect key="frame" x="20" y="30" width="374" height="626"/>
+                                                <rect key="frame" x="20" y="30" width="374" height="708"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="h7I-Bm-tnW">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
@@ -131,8 +131,15 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQJ-R9-kuo">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7V-X3-KjO">
                                                         <rect key="frame" x="0.0" y="596" width="374" height="30"/>
+                                                        <state key="normal" title="Choose Category"/>
+                                                        <connections>
+                                                            <action selector="didTapChooseCategory:" destination="jL7-ep-rKI" eventType="touchUpInside" id="IHP-hv-oxM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQJ-R9-kuo">
+                                                        <rect key="frame" x="0.0" y="678" width="374" height="30"/>
                                                         <state key="normal" title="Add Product"/>
                                                         <connections>
                                                             <action selector="didTapAddProductBtn:" destination="jL7-ep-rKI" eventType="touchUpInside" id="nGw-Ey-iwW"/>
@@ -169,6 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="WzQ-Tf-jdM"/>
                     </view>
                     <connections>
+                        <outlet property="chooseCategoryBtn" destination="p7V-X3-KjO" id="3wE-Fe-JXL"/>
                         <outlet property="productDescreptionField" destination="G1L-io-dig" id="Hxs-qm-ZhN"/>
                         <outlet property="productImage" destination="h7I-Bm-tnW" id="3ot-x5-GYz"/>
                         <outlet property="productNameField" destination="QzI-qA-eJV" id="c57-bw-Ym1"/>

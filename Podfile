@@ -24,7 +24,6 @@ target 'TakeAwayAdmin' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   shared_pods
-
   # Pods for TakeAwayAdmin
 
 end
