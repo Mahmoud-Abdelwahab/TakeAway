@@ -60,6 +60,7 @@
 		BBB764CC24F3793D00EBBD1B /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB764C924F3793D00EBBD1B /* HomeCell.xib */; };
 		BBB764CD24F3793D00EBBD1B /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB764C924F3793D00EBBD1B /* HomeCell.xib */; };
 		BBD63AB624F4C2D3004AB598 /* AdminHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB524F4C2D3004AB598 /* AdminHomeVC.swift */; };
+		BBD63AB924F4E414004AB598 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		BBB764C824F3793D00EBBD1B /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		BBB764C924F3793D00EBBD1B /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BBD63AB524F4C2D3004AB598 /* AdminHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeVC.swift; sourceTree = "<group>"; };
+		BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		E53B631C2A869CEF1CE911D9 /* Pods-TakeAway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAway.release.xcconfig"; path = "Target Support Files/Pods-TakeAway/Pods-TakeAway.release.xcconfig"; sourceTree = "<group>"; };
 		F4CCA488A5F5D195B5919D89 /* Pods_TakeAway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F739F6B64053E16AFF368608 /* Pods_TakeAwayAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeAwayAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 		BB0B058224F04BFD006AB838 /* TakeAway */ = {
 			isa = PBXGroup;
 			children = (
+				BBD63AB724F4E3CD004AB598 /* ProductDetails */,
 				BBB764C724F378D000EBBD1B /* HomeVC */,
 				BB9B879E24F38CA0000EFB25 /* ProductVC */,
 				BB0B058324F04BFD006AB838 /* AppDelegate.swift */,
@@ -292,6 +295,14 @@
 				BBB764C924F3793D00EBBD1B /* HomeCell.xib */,
 			);
 			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		BBD63AB724F4E3CD004AB598 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */,
+			);
+			path = ProductDetails;
 			sourceTree = "<group>";
 		};
 		F6E08039F75F7412EA0BF2A5 /* Pods */ = {
@@ -503,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB764AB24F28E7A00EBBD1B /* Users.swift in Sources */,
+				BBD63AB924F4E414004AB598 /* ProductDetailsVC.swift in Sources */,
 				BBB764B724F35EF600EBBD1B /* IDismissLoginScreenDelegate.swift in Sources */,
 				BB0B058824F04BFD006AB838 /* HomeVC.swift in Sources */,
 				BB9352A724F06A6F00400913 /* RegistrationVC.swift in Sources */,

@@ -83,6 +83,86 @@
             </objects>
             <point key="canvasLocation" x="1797" y="74"/>
         </scene>
+        <!--Product DetailsVC-->
+        <scene sceneID="0PJ-J0-gOa">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailsVC" id="V2r-YT-xBI" customClass="ProductDetailsVC" customModule="TakeAway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O5b-zA-A0N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6D-11-5aD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="251"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="4MB-gw-NdH"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="eKa-ix-zLc">
+                                <rect key="frame" x="20" y="325" width="374" height="350"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-8O-0Bp">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36h-fk-Zvc">
+                                        <rect key="frame" x="0.0" y="55.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUe-eT-fiM">
+                                        <rect key="frame" x="0.0" y="111" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEh-1b-lac">
+                                        <rect key="frame" x="0.0" y="166.5" width="374" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="5ef-HJ-0mw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiF-U1-IB3">
+                                        <rect key="frame" x="0.0" y="301.5" width="374" height="48.5"/>
+                                        <state key="normal" title="Add To Cart"/>
+                                        <connections>
+                                            <action selector="onAddProductToCartClicked:" destination="V2r-YT-xBI" eventType="touchUpInside" id="G9v-n3-t6N"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="OYh-Q8-Ckd"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Q6D-11-5aD" firstAttribute="leading" secondItem="4ZO-MI-5wN" secondAttribute="leading" id="B4Z-FQ-AV3"/>
+                            <constraint firstItem="eKa-ix-zLc" firstAttribute="top" secondItem="Q6D-11-5aD" secondAttribute="bottom" constant="30" id="NLV-Ns-YpT"/>
+                            <constraint firstItem="Q6D-11-5aD" firstAttribute="trailing" secondItem="4ZO-MI-5wN" secondAttribute="trailing" id="NXa-s6-lXn"/>
+                            <constraint firstItem="Q6D-11-5aD" firstAttribute="top" secondItem="4ZO-MI-5wN" secondAttribute="top" id="ZPc-x3-mEr"/>
+                            <constraint firstItem="eKa-ix-zLc" firstAttribute="leading" secondItem="4ZO-MI-5wN" secondAttribute="leading" constant="20" id="kr2-6g-INE"/>
+                            <constraint firstItem="4ZO-MI-5wN" firstAttribute="trailing" secondItem="eKa-ix-zLc" secondAttribute="trailing" constant="20" id="x3o-tg-NYm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4ZO-MI-5wN"/>
+                    </view>
+                    <connections>
+                        <outlet property="productDescription" destination="pEh-1b-lac" id="11K-yw-Kiq"/>
+                        <outlet property="productImage" destination="Q6D-11-5aD" id="OQu-aV-JJN"/>
+                        <outlet property="productName" destination="pni-8O-0Bp" id="lmG-Da-taw"/>
+                        <outlet property="productPrice" destination="36h-fk-Zvc" id="v1C-5E-39t"/>
+                        <outlet property="productStock" destination="dUe-eT-fiM" id="Fud-fO-T6a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Bc-Sf-opo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618.840579710145" y="73.660714285714278"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5hB-Qk-Ach">
             <objects>
