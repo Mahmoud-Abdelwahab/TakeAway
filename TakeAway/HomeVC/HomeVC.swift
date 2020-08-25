@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeVC.swift
 //  TakeAway
 //
 //  Created by kasper on 8/21/20.
@@ -11,7 +11,7 @@ import FirebaseFirestore
 import FirebaseAuth
 
 
-class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
+class HomeVC: UIViewController {
     
     var categoryList : [Category] = []
     var filteredCategoryList : [Category] = []
@@ -19,23 +19,22 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
     
     @IBOutlet weak var categoryTable: UITableView!
     
+    
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser == nil {
             showLoginScreen()
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         configureSearchControler()
         configureTableView()
         loadCategories()
         
-        
-        
     }
+    
     
     @IBAction func didTapLogout(_ sender: Any) {
         do {
@@ -66,6 +65,7 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
         }
     }
     
+    
     private func showLoginScreen(){
         let loginStroyboard = UIStoryboard(name: "LoginVC", bundle: nil)
         let loginVC = loginStroyboard.instantiateViewController(withIdentifier: Storyboard.LoginVC) as! LoginVC
@@ -73,6 +73,7 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
         self.present(loginVC, animated: true, completion: nil)
         
     }
+    
     
     func configureSearchControler() {
         
@@ -85,7 +86,6 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
         mySearchControler.obscuresBackgroundDuringPresentation  = false
         // this for hidding the littel blureing which appear over the collectionView when u type somthing in the searchBar
         
-        
     }
     
     
@@ -97,6 +97,12 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
         
     }
     
+    
+    
+}
+
+
+extension HomeVC :  UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -123,12 +129,10 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
         return 170
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let productVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
-        
-        
-        
         if isSearchActive {
             productVC.categoryId = filteredCategoryList[indexPath.row].id
         }else{
@@ -137,11 +141,6 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
         
         self.navigationController?.pushViewController(productVC, animated: true)
     }
-    
-}
-
-
-extension HomeVC  {
     
     
 }
