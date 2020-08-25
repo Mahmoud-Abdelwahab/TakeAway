@@ -27,13 +27,13 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
-       
-         configureSearchControler()
-        configureTableView()
-         loadCategories()
         
-       
+        
+        configureSearchControler()
+        configureTableView()
+        loadCategories()
+        
+        
         
     }
     
@@ -64,7 +64,7 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
                 self.categoryTable.reloadData()
             }
         }
-        }
+    }
     
     private func showLoginScreen(){
         let loginStroyboard = UIStoryboard(name: "LoginVC", bundle: nil)
@@ -94,7 +94,7 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
         categoryTable.delegate      = self
         categoryTable.register(HomeCell.nib(), forCellReuseIdentifier: HomeCell.identifier)
         categoryTable.separatorInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
-
+        
     }
     
     
@@ -121,13 +121,13 @@ class HomeVC: UIViewController ,  UITableViewDelegate , UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
-        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let productVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
         
-       
+        
         
         if isSearchActive {
             productVC.categoryId = filteredCategoryList[indexPath.row].id
@@ -151,27 +151,28 @@ extension HomeVC : UISearchResultsUpdating , UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        //        guard let filter = searchController.searchBar.text , !filter.isEmpty  else {
-        //            // this code handle a bug when u delelte  character by character from the search bar unti it becomes empty the displayed array will be the filltered so u will find bug when u click in some of the user cards
-        //            filterebFollowers.removeAll()
-        //            updataData(on: followersList)
-        //            isSearchActive  = false
-        //            return
-        //
-        //        }
-        //        isSearchActive  = true
-        //        filteredCategoryList = categoryList.filter{$0.name.lowercased().contains(filter.lowercased())}
-        //        // this called map reduce
-        //        //$0 this is the follower object in every loop in the array
-        //        updataData(on: filterebFollowers)
+        guard let filter = searchController.searchBar.text , !filter.isEmpty  else {
+            // this code handle a bug when u delelte  character by character from the search bar unti it becomes empty the displayed array will be the filltered so u will find bug when u click in some of the user cards
+            filteredCategoryList.removeAll()
+            
+            isSearchActive  = false
+            categoryTable.reloadData()
+            return
+            
+        }
+        isSearchActive  = true
+        filteredCategoryList = categoryList.filter{$0.name.lowercased().contains(filter.lowercased())}
+        // this called map reduce
+        //$0 this is the follower object in every loop in the array
+        categoryTable.reloadData()
     }
     
-    //
     
-    //    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    //        isSearchActive = false
-    //        updataData(on: followersList)
-    //
-    //    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearchActive = false
+        categoryTable.reloadData()
+        
+    }
     
 }
