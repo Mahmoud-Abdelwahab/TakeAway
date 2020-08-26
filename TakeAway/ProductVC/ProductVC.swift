@@ -59,7 +59,7 @@ class ProductVC: UIViewController {
     
     func loadProduct(with categoryId : String ){
         
-        let dbRef = Firestore.firestore().collection("Products").whereField("categoryId", isEqualTo: categoryId).order(by: "timeStamp", descending: true).getDocuments() { (querySnapshot, err) in
+        let _ = Firestore.firestore().collection("Products").whereField("categoryId", isEqualTo: categoryId).order(by: "timeStamp", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

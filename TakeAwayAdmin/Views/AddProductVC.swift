@@ -12,7 +12,7 @@ import Firebase
 class AddProductVC: UIViewController {
     
     let tableView = UITableView()
-    let categoryId : String?
+    let categoryId : String? = nil
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var stockField: UITextField!
     @IBOutlet weak var productDescreptionField: UITextField!
