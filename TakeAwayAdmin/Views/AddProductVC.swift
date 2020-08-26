@@ -28,7 +28,7 @@ class AddProductVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillDropDownWithCategroies()
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTaped(_:)))
         productImage.addGestureRecognizer(tap)
         
@@ -45,15 +45,8 @@ class AddProductVC: UIViewController {
     }
     
     
-    
-    
     @IBAction func didTapChooseCategory(_ sender: Any) {
         addTransparentView(buttonFrame: chooseCategoryBtn.frame)
-    }
-    
-    
-    private func fillDropDownWithCategroies(){
-        
     }
     
     
@@ -99,9 +92,6 @@ class AddProductVC: UIViewController {
     
     func uploadNewProduct(with url : String){
           
-        
-        
-        
         guard let categoryId = categoryId,let price =  (productPriceField.text as NSString?)?.doubleValue  , let description = productDescreptionField.text , description.isNotEmpty , let stock = stockField.text , stock.isNotEmpty else {return}
         
         let dbRef =  Firestore.firestore().collection("Products").document()
