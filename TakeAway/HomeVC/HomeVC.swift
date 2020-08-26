@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
     var categoryList : [Category] = []
     var filteredCategoryList : [Category] = []
     var isSearchActive : Bool = false
-    
+      var categoryDectionary : [String : String] = [:]
     @IBOutlet weak var categoryTable: UITableView!
     
     
@@ -59,8 +59,11 @@ class HomeVC: UIViewController {
                 
                 let data = document.data()
                 let newCategory = Category.init(data: data)
+                self.categoryDectionary[newCategory.name] = newCategory.id
                 self.categoryList.append(newCategory)
+                
                 self.categoryTable.reloadData()
+                UserDefaults.standard.set(self.categoryDectionary, forKey: "CATEGORY")
             }
         }
     }

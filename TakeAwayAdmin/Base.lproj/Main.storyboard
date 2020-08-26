@@ -103,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="whK-KQ-YTK">
-                                                <rect key="frame" x="20" y="30" width="374" height="708"/>
+                                                <rect key="frame" x="20" y="30" width="374" height="701"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="h7I-Bm-tnW">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
@@ -111,35 +111,39 @@
                                                             <constraint firstAttribute="height" constant="200" id="am5-Sf-LKH"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzI-qA-eJV">
-                                                        <rect key="frame" x="0.0" y="252" width="374" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="productPriceField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpK-87-vYl">
-                                                        <rect key="frame" x="0.0" y="338" width="374" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ProductDescreptionField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1L-io-dig">
-                                                        <rect key="frame" x="0.0" y="424" width="374" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="StockField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXU-fc-lAV">
-                                                        <rect key="frame" x="0.0" y="510" width="374" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7V-X3-KjO">
-                                                        <rect key="frame" x="0.0" y="596" width="374" height="30"/>
-                                                        <state key="normal" title="Choose Category"/>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7V-X3-KjO">
+                                                        <rect key="frame" x="0.0" y="252" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <state key="normal" title="  Choose Category  " image="chevron.down.square" catalog="system">
+                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="18" scale="large" weight="light"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="didTapChooseCategory:" destination="jL7-ep-rKI" eventType="touchUpInside" id="IHP-hv-oxM"/>
                                                         </connections>
                                                     </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QzI-qA-eJV">
+                                                        <rect key="frame" x="0.0" y="327" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="productPriceField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpK-87-vYl">
+                                                        <rect key="frame" x="0.0" y="413" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ProductDescreptionField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1L-io-dig">
+                                                        <rect key="frame" x="0.0" y="499" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="StockField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXU-fc-lAV">
+                                                        <rect key="frame" x="0.0" y="585" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQJ-R9-kuo">
-                                                        <rect key="frame" x="0.0" y="678" width="374" height="30"/>
+                                                        <rect key="frame" x="0.0" y="671" width="374" height="30"/>
                                                         <state key="normal" title="Add Product"/>
                                                         <connections>
                                                             <action selector="didTapAddProductBtn:" destination="jL7-ep-rKI" eventType="touchUpInside" id="nGw-Ey-iwW"/>
@@ -289,6 +293,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.down.square" catalog="system" width="64" height="56"/>
         <image name="img_placeholder" width="980" height="736"/>
     </resources>
 </document>

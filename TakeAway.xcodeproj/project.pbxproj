@@ -198,7 +198,6 @@
 				BB9352B024F10C3200400913 /* Extentions */,
 				BB0B058C24F04C00006AB838 /* Assets.xcassets */,
 				BB0B05B024F04CCD006AB838 /* Constants.swift */,
-				BB93529D24F0698400400913 /* Models */,
 				BB93529C24F0696700400913 /* ViewControllers */,
 			);
 			path = Shared;
@@ -212,13 +211,6 @@
 				BB93529E24F0699F00400913 /* Login */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		BB93529D24F0698400400913 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		BB93529E24F0699F00400913 /* Login */ = {

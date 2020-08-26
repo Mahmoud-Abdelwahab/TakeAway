@@ -10,7 +10,6 @@ import UIKit
 import FirebaseFirestore
 
 class ProductVC: UIViewController {
-    
     var productList : [Products] = []
     var filteredProductList : [Products] = []
     var isSearchActive : Bool = false
@@ -118,10 +117,11 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
-        productDetailsVC.product = productList[indexPath.row]
+            let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
+            productDetailsVC.product = productList[indexPath.row]
+            
+            navigationController?.pushViewController(productDetailsVC, animated: true)
         
-        navigationController?.pushViewController(productDetailsVC, animated: true)
     }
     
 }
