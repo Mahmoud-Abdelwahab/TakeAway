@@ -37,6 +37,30 @@
                                 <action selector="didTapLogout:" destination="BYZ-38-t0r" id="Ggt-rx-gvd"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="5KW-t5-xYk">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qsc-xf-vck">
+                                    <rect key="frame" x="317" y="11" width="77" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="cart.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="didTapCartBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yOP-gm-yOh"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="mhP-ci-uoB">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5HP-hu-jW5">
+                                    <rect key="frame" x="287" y="11" width="22" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" image="star.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="didTapFavoriteBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZt-M4-pjY"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="categoryTable" destination="PJx-SZ-p7D" id="bTD-UN-7lG"/>
@@ -163,6 +187,40 @@
             </objects>
             <point key="canvasLocation" x="2618.840579710145" y="73.660714285714278"/>
         </scene>
+        <!--FavoriteVC-->
+        <scene sceneID="iFW-Y9-Ke6">
+            <objects>
+                <viewController storyboardIdentifier="FavoriteVC" id="kqt-r3-gjD" customClass="FavoriteVC" customModule="TakeAway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RmH-N7-Ixe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OS8-BU-cKF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rDD-TX-B1J">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OS8-BU-cKF" secondAttribute="bottom" id="39U-sP-MSc"/>
+                            <constraint firstItem="OS8-BU-cKF" firstAttribute="trailing" secondItem="J5m-IL-n5f" secondAttribute="trailing" id="NRP-tK-swm"/>
+                            <constraint firstItem="OS8-BU-cKF" firstAttribute="top" secondItem="J5m-IL-n5f" secondAttribute="top" id="TpF-bq-avb"/>
+                            <constraint firstItem="OS8-BU-cKF" firstAttribute="leading" secondItem="J5m-IL-n5f" secondAttribute="leading" id="UZU-ZI-28V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J5m-IL-n5f"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bug-Ln-TzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3426.0869565217395" y="73.660714285714278"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5hB-Qk-Ach">
             <objects>
@@ -182,4 +240,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="73.660714285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cart.fill" catalog="system" width="64" height="50"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

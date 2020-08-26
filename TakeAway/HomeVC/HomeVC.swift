@@ -36,6 +36,18 @@ class HomeVC: UIViewController {
     }
     
     
+    @IBAction func didTapFavoriteBtn(_ sender: Any) {
+        
+        
+    }
+    
+    
+    @IBAction func didTapCartBtn(_ sender: Any) {
+        
+        
+    }
+    
+    
     @IBAction func didTapLogout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
