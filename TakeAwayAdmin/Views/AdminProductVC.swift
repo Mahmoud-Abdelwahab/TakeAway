@@ -20,18 +20,18 @@ class AdminProductVC: ProductVC {
     
    @objc func didTapAddProduct()  {
     
-     // let alert = UIAlert
+    
     
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if isActive {
-            isActive = false
-            let addNewProductVC = self.storyboard?.instantiateViewController(withIdentifier: "AddProductVC") as! AddProductVC
-               addNewProductVC.categoryId = productList[indexPath.row].categoryId
-               navigationController?.pushViewController(addNewProductVC, animated: true)
-        }
-    }
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        if isActive {
+//            isActive = false
+//            let addNewProductVC = self.storyboard?.instantiateViewController(withIdentifier: "AddProductVC") as! AddProductVC
+//               addNewProductVC.categoryId = productList[indexPath.row].categoryId
+//               navigationController?.pushViewController(addNewProductVC, animated: true)
+//        }
+//    }
 
 }
