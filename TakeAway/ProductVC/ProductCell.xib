@@ -115,7 +115,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="367" height="367"/>
             <connections>
+                <outlet property="cartImage" destination="xCs-BU-vCE" id="tfz-BO-9Mn"/>
                 <outlet property="descriptionLable" destination="UEm-g3-hjh" id="boE-AZ-3P0"/>
+                <outlet property="favoriteStare" destination="iuA-cT-w9K" id="qal-dm-gat"/>
                 <outlet property="productImage" destination="SnQ-uI-tLU" id="m8P-DT-8di"/>
                 <outlet property="productNameText" destination="CRJ-Wg-j8B" id="K0U-cv-ScY"/>
                 <outlet property="productPriceText" destination="D3L-db-h9r" id="DSx-3H-PLQ"/>

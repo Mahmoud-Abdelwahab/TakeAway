@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza cat" translatesAutoresizingMaskIntoConstraints="NO" id="aRe-2G-wzS">
-                        <rect key="frame" x="5" y="5" width="245" height="94"/>
+                        <rect key="frame" x="7" y="5" width="241" height="94"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1s-Hj-57e">
                         <rect key="frame" x="73.5" y="23" width="108" height="58.5"/>
@@ -31,8 +31,8 @@
                     <constraint firstItem="A1s-Hj-57e" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1sN-e4-0do"/>
                     <constraint firstItem="aRe-2G-wzS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ak1-yz-Aiv"/>
                     <constraint firstItem="A1s-Hj-57e" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gmg-dt-RzR"/>
-                    <constraint firstAttribute="trailing" secondItem="aRe-2G-wzS" secondAttribute="trailing" constant="5" id="Goe-a5-xfT"/>
-                    <constraint firstItem="aRe-2G-wzS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="tTV-Jf-HEQ"/>
+                    <constraint firstAttribute="trailing" secondItem="aRe-2G-wzS" secondAttribute="trailing" constant="7" id="Goe-a5-xfT"/>
+                    <constraint firstItem="aRe-2G-wzS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="tTV-Jf-HEQ"/>
                     <constraint firstAttribute="bottom" secondItem="aRe-2G-wzS" secondAttribute="bottom" constant="5" id="v1S-Xi-vTd"/>
                 </constraints>
             </tableViewCellContentView>

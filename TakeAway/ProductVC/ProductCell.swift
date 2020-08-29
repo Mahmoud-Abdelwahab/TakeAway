@@ -13,12 +13,15 @@ class ProductCell: UICollectionViewCell {
  
     static let identifier = "ProductCell"
     
+    @IBOutlet weak var cartImage: UIButton!
+    @IBOutlet weak var favoriteStare: UIButton!
     @IBOutlet weak var descriptionLable: UILabel!
     @IBOutlet weak var productNameText: UILabel!
     @IBOutlet weak var productPriceText: UILabel!
     
     @IBOutlet weak var productImage: UIImageView!
     
+    var favortie: (()->())?
     var product : Products?{
         didSet{
             setupCell(with : product!)
@@ -40,6 +43,11 @@ class ProductCell: UICollectionViewCell {
         productNameText.text = product.name
         productPriceText.text =  "\(product.price)"
         descriptionLable.text = product.productDescription
+        if HomeVC.favoriteArray.contains(product){
+        favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+        }else{
+             favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
+        }
         guard  let url = URL(string: product.imgURL!) else {
             return
         }
@@ -50,6 +58,7 @@ class ProductCell: UICollectionViewCell {
     }
     
     @IBAction func didTapFavoriteBtn(_ sender: Any) {
+        favortie!()
     }
     
 }

@@ -93,9 +93,10 @@ class RegistrationVC: UITableViewController {
         
         let dbRef =  Firestore.firestore().collection("Users").document()
         dbRef.setData([
-            "id"   : dbRef.documentID,
+            "id"   : Auth.auth().currentUser!.uid,
             "name" : username ,
             "email": email,
+            "stripeId": ""
         ]) {[weak self] err in
             guard let self = self else { return}
             if let err = err {

@@ -10,5 +10,14 @@ import UIKit
 
 extension UIViewController{
     
+    func saveProductsInUserDefault(with product  : [Products] , Key : String){
+         UserDefaults.standard.set( product, forKey: key)
+    }
+    
+    func getProductsFromUserDefault(key : String ) -> [Products] {
+       return  UserDefaults.standard.object(forKey: key) as? [Products] ?? []
+        
+    }
+    
     
 }

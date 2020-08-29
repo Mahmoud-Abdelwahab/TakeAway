@@ -8,11 +8,15 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class ProductVC: UIViewController {
+    
+    let userDefault = UserDefaults.standard
     var productList : [Products] = []
     var filteredProductList : [Products] = []
     var isSearchActive : Bool = false
+    var isShowFavorite : Bool = false
     
     var categoryId : String?
     
@@ -23,7 +27,12 @@ class ProductVC: UIViewController {
         super.viewDidLoad()
         configureSearchControler()
         configureCollection()
-        loadProduct(with : categoryId!)
+        if isShowFavorite{
+            productList = HomeVC.favoriteArray
+            isShowFavorite = false
+        }else {
+            loadProduct(with : categoryId!)
+              }
     }
     
     
@@ -44,7 +53,7 @@ class ProductVC: UIViewController {
         let interItemSpacing : CGFloat    = 5
         
         let width  = (productCollection.frame.width - (padding * 2 ) - ((numberOfItemPerRow - 1)*interItemSpacing)) / numberOfItemPerRow
-        let height  = width + 20
+        let height  = width / 2
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.itemSize = CGSize(width: width, height: height)
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
@@ -58,7 +67,7 @@ class ProductVC: UIViewController {
     
     func loadProduct(with categoryId : String ){
         
-        let _ = Firestore.firestore().collection("Products").whereField("categoryId", isEqualTo: categoryId).order(by: "timeStamp", descending: true).getDocuments() { (querySnapshot, err) in
+        let _ = Firestore.firestore().collection("Products").whereField("categoryId", isEqualTo: categoryId).order(by: "timeStamp", descending: true).addSnapshotListener () { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -113,6 +122,28 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
         }else{
             cell.product = productList[indexPath.row]
         }
+        
+        cell.favortie = { [weak self] in
+            guard let self = self else {return}
+            let product : Products?
+    
+            if self.isSearchActive {
+                
+                 product = self.filteredProductList[indexPath.row]
+                cell.product  = product
+                self.favoriteAndUnFavorite(with : product! , cell : cell)
+                
+                   }else{
+               product = self.productList[indexPath.row]
+                cell.product = product
+                self.favoriteAndUnFavorite(with : product! , cell : cell)
+
+                   }
+           
+        }
+        
+        
+        
         return cell
     }
     
@@ -124,6 +155,82 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
         
     }
     
+//    func saveProductsInUserDefault(with productArray  : [Products] , Key : String){
+//
+//        do {
+//        let encodedProducts = try NSKeyedArchiver.archivedData(withRootObject: productArray, requiringSecureCoding: false)
+//
+//         UserDefaults.standard.set( encodedProducts, forKey: Key)
+//
+//        }catch(let err){
+//            print(err.localizedDescription)
+//        }
+//
+//    }
+//
+//    func getProductsFromUserDefault(key : String ) -> [Products]? {
+//        if let decodedProducts = UserDefaults.standard.object(forKey: key) as? Data{
+//        do {
+//            guard let array = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decodedProducts) as? [Products] else {
+//                fatalError("DataArray - Can't get Array")
+//            }
+//            return array
+//        } catch {
+//            fatalError("DataArray - Can't encode data: \(error)")
+//        }
+//        }else{
+//            return nil
+//        }
+//    }
+
+    
+    func favoriteAndUnFavorite(with product : Products , cell : ProductCell) {
+        
+             
+        if  HomeVC.favoriteArray.count>0 {
+            // there is some favorite
+            if HomeVC.favoriteArray.contains(product){
+                // product already favorited so you need to remove the product from favorites
+                //1 - change image to empty stare
+                //2 - remove the product from the userefault
+                
+               let index = HomeVC.favoriteArray.firstIndex(of: product)
+                HomeVC.favoriteArray.remove(at: index!)
+                self.removeProductFromFirestore(with : product)
+                cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
+            }else{
+                // product is newly favorited add it to the userdefault
+                HomeVC.favoriteArray.append(product)
+                 self.saveProductToFirestore( with  : product)
+                 cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+            }
+           
+           // cell.favoriteStare.imageView?.image = UIImage(named: )
+        }else {
+            //the favorite is empty
+            // create array of products and store it in the userdefault
+            
+            HomeVC.favoriteArray.append(product)
+            saveProductToFirestore( with  : product)
+            
+            cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+        }
+        
+        
+    }
+    
+    
+    func saveProductToFirestore( with product : Products){
+        let fStoreRef = Firestore.firestore().collection("Users").document(Auth.auth().currentUser!.uid).collection("Favorites")
+        let data  = Products.productToDictionary(with: product)
+        fStoreRef.document(product.name!).setData(data)
+    }
+    
+    func removeProductFromFirestore(with product : Products){
+         let fStoreRef = Firestore.firestore().collection("Users").document(Auth.auth().currentUser!.uid).collection("Favorites")
+        fStoreRef.document(product.name!).delete()
+        
+    }
 }
 
 
