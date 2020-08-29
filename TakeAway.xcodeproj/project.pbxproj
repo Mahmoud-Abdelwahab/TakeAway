@@ -49,6 +49,9 @@
 		BB9B87A724F38CE5000EFB25 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9B87A324F38CE5000EFB25 /* ProductCell.xib */; };
 		BBA64CD924F9966C00165747 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA64CD724F9966C00165747 /* CartCell.swift */; };
 		BBA64CDA24F9966C00165747 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA64CD824F9966C00165747 /* CartCell.xib */; };
+		BBA64CDC24FA075000165747 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA64CDB24FA075000165747 /* Realm.framework */; };
+		BBA64CDD24FA075000165747 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBA64CDB24FA075000165747 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BBA64CE524FA096600165747 /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA64CE424FA096600165747 /* RealmDBManager.swift */; };
 		BBB764AB24F28E7A00EBBD1B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB764AA24F28E7A00EBBD1B /* Users.swift */; };
 		BBB764AC24F28E7A00EBBD1B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB764AA24F28E7A00EBBD1B /* Users.swift */; };
 		BBB764B124F28EE400EBBD1B /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB764B024F28EE400EBBD1B /* Products.swift */; };
@@ -67,6 +70,20 @@
 		BBD63AB924F4E414004AB598 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */; };
 		BBD63ABB24F4FCC0004AB598 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BBA64CDE24FA075000165747 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BBA64CDD24FA075000165747 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E6ADA6EF2B68E559A6268B1 /* Pods-TakeAwayAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAwayAdmin.debug.xcconfig"; path = "Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +121,8 @@
 		BB9B87A324F38CE5000EFB25 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		BBA64CD724F9966C00165747 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		BBA64CD824F9966C00165747 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		BBA64CDB24FA075000165747 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		BBA64CE424FA096600165747 /* RealmDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBManager.swift; sourceTree = "<group>"; };
 		BBB764AA24F28E7A00EBBD1B /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		BBB764B024F28EE400EBBD1B /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		BBB764B624F35EF600EBBD1B /* IDismissLoginScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDismissLoginScreenDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA64CDC24FA075000165747 /* Realm.framework in Frameworks */,
 				77B828BAC354EC284597CF99 /* Pods_TakeAway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +162,7 @@
 		5A117CDA9FA0E5078309DADA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBA64CDB24FA075000165747 /* Realm.framework */,
 				F4CCA488A5F5D195B5919D89 /* Pods_TakeAway.framework */,
 				F739F6B64053E16AFF368608 /* Pods_TakeAwayAdmin.framework */,
 			);
@@ -172,6 +193,7 @@
 		BB0B058224F04BFD006AB838 /* TakeAway */ = {
 			isa = PBXGroup;
 			children = (
+				BBA64CE124FA08FA00165747 /* Repository */,
 				BBB764C724F378D000EBBD1B /* HomeVC */,
 				BB9B879E24F38CA0000EFB25 /* ProductVC */,
 				BBD63AB724F4E3CD004AB598 /* ProductDetails */,
@@ -297,6 +319,14 @@
 			path = CartCell;
 			sourceTree = "<group>";
 		};
+		BBA64CE124FA08FA00165747 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BBA64CE424FA096600165747 /* RealmDBManager.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		BBB764A324F28DF700EBBD1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +387,8 @@
 				BB0B057D24F04BFD006AB838 /* Frameworks */,
 				BB0B057E24F04BFD006AB838 /* Resources */,
 				E50555A647A40A1B44B1B1B7 /* [CP] Embed Pods Frameworks */,
+				BBA64CDE24FA075000165747 /* Embed Frameworks */,
+				BBA64CE024FA083000165747 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -519,6 +551,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BBA64CE024FA083000165747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$(SRCROOT)/Carthage/Build/iOS/Realm.framework$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework\n";
+		};
 		E50555A647A40A1B44B1B1B7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -544,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB764AB24F28E7A00EBBD1B /* Users.swift in Sources */,
+				BBA64CE524FA096600165747 /* RealmDBManager.swift in Sources */,
 				BBA64CD924F9966C00165747 /* CartCell.swift in Sources */,
 				BBD63AB924F4E414004AB598 /* ProductDetailsVC.swift in Sources */,
 				BB7DF52F24F703C60053C69C /* FavoriteVC.swift in Sources */,
@@ -751,6 +801,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TakeAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -770,6 +824,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TakeAway/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

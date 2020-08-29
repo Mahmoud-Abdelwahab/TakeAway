@@ -154,35 +154,7 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
             navigationController?.pushViewController(productDetailsVC, animated: true)
         
     }
-    
-//    func saveProductsInUserDefault(with productArray  : [Products] , Key : String){
-//
-//        do {
-//        let encodedProducts = try NSKeyedArchiver.archivedData(withRootObject: productArray, requiringSecureCoding: false)
-//
-//         UserDefaults.standard.set( encodedProducts, forKey: Key)
-//
-//        }catch(let err){
-//            print(err.localizedDescription)
-//        }
-//
-//    }
-//
-//    func getProductsFromUserDefault(key : String ) -> [Products]? {
-//        if let decodedProducts = UserDefaults.standard.object(forKey: key) as? Data{
-//        do {
-//            guard let array = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decodedProducts) as? [Products] else {
-//                fatalError("DataArray - Can't get Array")
-//            }
-//            return array
-//        } catch {
-//            fatalError("DataArray - Can't encode data: \(error)")
-//        }
-//        }else{
-//            return nil
-//        }
-//    }
-
+ 
     
     func favoriteAndUnFavorite(with product : Products , cell : ProductCell) {
         
@@ -260,3 +232,5 @@ extension ProductVC : UISearchResultsUpdating , UISearchBarDelegate {
     }
     
 }
+
+extension Produ

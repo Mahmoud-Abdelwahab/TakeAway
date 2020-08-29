@@ -8,10 +8,13 @@
 
 import UIKit
 import Kingfisher
-
+protocol AddToCartDelegate : class {
+    func didTapAddToCart()
+}
 class ProductCell: UICollectionViewCell {
  
     static let identifier = "ProductCell"
+    weak var addToCartDelegate : AddToCartDelegate!
     
     @IBOutlet weak var cartImage: UIButton!
     @IBOutlet weak var favoriteStare: UIButton!
@@ -55,6 +58,7 @@ class ProductCell: UICollectionViewCell {
         
     }
     @IBAction func didTapAddToCartBtn(_ sender: Any) {
+        addToCartDelegate.didTapAddToCart()
     }
     
     @IBAction func didTapFavoriteBtn(_ sender: Any) {

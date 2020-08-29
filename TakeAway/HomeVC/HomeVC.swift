@@ -10,7 +10,6 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-
 class HomeVC: UIViewController {
     
     var categoryList : [Category] = []
