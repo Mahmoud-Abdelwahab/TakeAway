@@ -233,4 +233,10 @@ extension ProductVC : UISearchResultsUpdating , UISearchBarDelegate {
     
 }
 
-extension Produ
+extension ProductVC : AddToCartDelegate{
+    func didTapAddToCart(product: Products) {
+        print(product.name)
+    }
+    
+    
+}

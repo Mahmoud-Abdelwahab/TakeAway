@@ -10,8 +10,12 @@ import  RealmSwift
 
 class RealmDBManager {
    
-    private init(){}
+    
     static let shared = RealmDBManager()
+    
+    
+    private init(){}
+    
     
 }
 

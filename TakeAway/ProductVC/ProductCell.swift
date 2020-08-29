@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 protocol AddToCartDelegate : class {
-    func didTapAddToCart()
+    func didTapAddToCart(product : Products)
 }
 class ProductCell: UICollectionViewCell {
  
@@ -58,7 +58,7 @@ class ProductCell: UICollectionViewCell {
         
     }
     @IBAction func didTapAddToCartBtn(_ sender: Any) {
-        addToCartDelegate.didTapAddToCart()
+        addToCartDelegate.didTapAddToCart(product: self.product!)
     }
     
     @IBAction func didTapFavoriteBtn(_ sender: Any) {
