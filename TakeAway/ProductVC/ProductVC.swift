@@ -10,14 +10,13 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class ProductVC: UIViewController {
+class ProductVC: UIViewController  {
     
     let userDefault = UserDefaults.standard
     var productList : [Products] = []
     var filteredProductList : [Products] = []
     var isSearchActive : Bool = false
     var isShowFavorite : Bool = false
-    
     var categoryId : String?
     
     @IBOutlet weak var productCollection: UICollectionView!
@@ -116,33 +115,51 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
         
         let cell = productCollection.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
         
+        var product : Products?
+        
+        cell.addToCartDelegate = self
         
         if isSearchActive {
-            cell.product  = filteredProductList[indexPath.row]
+              product = filteredProductList[indexPath.row]
+            cell.product  = product
         }else{
-            cell.product = productList[indexPath.row]
+            product = productList[indexPath.row]
+            cell.product = product
         }
-        
+       
         cell.favortie = { [weak self] in
             guard let self = self else {return}
-            let product : Products?
+         
     
             if self.isSearchActive {
                 
                  product = self.filteredProductList[indexPath.row]
                 cell.product  = product
-                self.favoriteAndUnFavorite(with : product! , cell : cell)
+                self.favoriteAndUnFavorite(with : product! ,cell : cell )
                 
                    }else{
                product = self.productList[indexPath.row]
                 cell.product = product
-                self.favoriteAndUnFavorite(with : product! , cell : cell)
+                self.favoriteAndUnFavorite(with : product! , cell : cell )
 
                    }
            
         }
         
-        
+        if HomeVC.favoriteArray.contains(product!){
+                  cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+                   }else{
+                         cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
+                   }
+                   
+        if  RealmDBManager.shared.getCartProducts().contains(where: { (pro) -> Bool in
+            return pro.name == product!.name
+        }) {
+                         cell.cartImage.setImage(UIImage(named: "fill-cart"), for: .normal)
+                   }else{
+                         cell.cartImage.setImage(UIImage(named: "empty-cart"), for: .normal)
+                   }
+              
         
         return cell
     }
@@ -156,7 +173,7 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
     }
  
     
-    func favoriteAndUnFavorite(with product : Products , cell : ProductCell) {
+    func favoriteAndUnFavorite(with product : Products ,cell : ProductCell ) {
         
              
         if  HomeVC.favoriteArray.count>0 {
@@ -234,9 +251,35 @@ extension ProductVC : UISearchResultsUpdating , UISearchBarDelegate {
 }
 
 extension ProductVC : AddToCartDelegate{
-    func didTapAddToCart(product: Products) {
-        print(product.name)
+    
+    
+    func didTapAddToCart(product: Products , cell : ProductCell) {
+        if checkIfPorductExists(product : product){
+            // product exists
+            RealmDBManager.shared.deleteOneProduct(product: product)
+              cell.cartImage.setImage(UIImage(named: "empty-cart"), for: .normal)
+        }else{
+            //product not exists
+            RealmDBManager.shared.saveOneProduct(product: product)
+            //
+              cell.cartImage.setImage(UIImage(named: "fill-cart"), for: .normal)
+        }
+        let db = RealmDBManager.shared.getCartProducts()
+        print(db)
     }
+    
+    
+    func  checkIfPorductExists(product : Products)-> Bool{
+        
+        if  RealmDBManager.shared.getCartProducts().contains(where: { (pro) -> Bool in
+            return pro.name == product.name
+        }) {
+            return true
+        }else{
+            return false
+        }
+    }
+    
     
     
 }

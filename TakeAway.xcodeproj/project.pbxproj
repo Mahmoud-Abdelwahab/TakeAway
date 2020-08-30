@@ -105,7 +105,6 @@
 		BB9B87A324F38CE5000EFB25 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		BBA64CD724F9966C00165747 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		BBA64CD824F9966C00165747 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
-		BBA64CDB24FA075000165747 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		BBA64CE424FA096600165747 /* RealmDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBManager.swift; sourceTree = "<group>"; };
 		BBB764AA24F28E7A00EBBD1B /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		BBB764B024F28EE400EBBD1B /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
@@ -145,7 +144,6 @@
 		5A117CDA9FA0E5078309DADA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BBA64CDB24FA075000165747 /* Realm.framework */,
 				F4CCA488A5F5D195B5919D89 /* Pods_TakeAway.framework */,
 				F739F6B64053E16AFF368608 /* Pods_TakeAwayAdmin.framework */,
 			);

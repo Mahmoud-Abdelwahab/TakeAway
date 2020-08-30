@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import  RealmSwift
+
+
 class CartVC: UIViewController {
 
     @IBOutlet weak var totalPriceLable: UILabel!
@@ -23,7 +24,7 @@ class CartVC: UIViewController {
     {
         cartTable.dataSource = self
         cartTable.delegate   = self
-        cartTable.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
+      //  cartTable.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
     }
     
     
@@ -37,11 +38,11 @@ class CartVC: UIViewController {
 
 extension CartVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        return UITableViewCell()
     }
     
     

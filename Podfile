@@ -8,6 +8,7 @@ def shared_pods
     pod 'Firebase/Storage'
     pod 'IQKeyboardManagerSwift'
     pod 'Kingfisher'
+    pod 'RealmSwift'
 
 end
 

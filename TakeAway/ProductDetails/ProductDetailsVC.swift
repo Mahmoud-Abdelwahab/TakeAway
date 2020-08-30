@@ -31,8 +31,8 @@ class ProductDetailsVC: UIViewController {
         
         productName.text        = product.name
         productDescription.text = product.productDescription
-        productStock.text       = "\(product.stock ?? 0)"
-        productPrice.text       = "\(product.price)"
+        productStock.text       = "\(product.stock.value ?? 0)"
+        productPrice.text       = "\(product.price.value)"
         guard let url           = URL(string: product.imgURL!) else{return}
         
         productImage.kf.setImage(with:url)

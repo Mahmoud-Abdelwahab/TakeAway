@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 protocol AddToCartDelegate : class {
-    func didTapAddToCart(product : Products)
+    func didTapAddToCart(product : Products , cell : ProductCell)
 }
 class ProductCell: UICollectionViewCell {
  
@@ -51,6 +51,12 @@ class ProductCell: UICollectionViewCell {
         }else{
              favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
         }
+        
+        if  RealmDBManager.shared.getCartProducts().contains(product){
+             cartImage.setImage(UIImage(named: "fill-cart"), for: .normal)
+        }else{
+             cartImage.setImage(UIImage(named: "empty-cart"), for: .normal)
+        }
         guard  let url = URL(string: product.imgURL!) else {
             return
         }
@@ -58,7 +64,7 @@ class ProductCell: UICollectionViewCell {
         
     }
     @IBAction func didTapAddToCartBtn(_ sender: Any) {
-        addToCartDelegate.didTapAddToCart(product: self.product!)
+        addToCartDelegate.didTapAddToCart(product: self.product!, cell : self)
     }
     
     @IBAction func didTapFavoriteBtn(_ sender: Any) {
