@@ -197,8 +197,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-Fx-vgY">
-                                <rect key="frame" x="0.0" y="44" width="414" height="717"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FXP-Fx-vgY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="697"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CY-Vb-VSX">
@@ -244,14 +244,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FXP-Fx-vgY" firstAttribute="top" secondItem="CwE-dG-82D" secondAttribute="top" id="26G-Fv-WLn"/>
                             <constraint firstItem="FXP-Fx-vgY" firstAttribute="leading" secondItem="CwE-dG-82D" secondAttribute="leading" id="4Xx-JG-wdm"/>
                             <constraint firstItem="FXP-Fx-vgY" firstAttribute="trailing" secondItem="CwE-dG-82D" secondAttribute="trailing" id="5cL-ae-nJt"/>
                             <constraint firstItem="5CY-Vb-VSX" firstAttribute="leading" secondItem="CwE-dG-82D" secondAttribute="leading" constant="20" id="GG6-mQ-oLY"/>
                             <constraint firstItem="CwE-dG-82D" firstAttribute="trailing" secondItem="5CY-Vb-VSX" secondAttribute="trailing" constant="20" id="QlQ-hd-zm8"/>
-                            <constraint firstItem="5CY-Vb-VSX" firstAttribute="top" secondItem="FXP-Fx-vgY" secondAttribute="bottom" id="RKi-Vt-WLh"/>
+                            <constraint firstItem="5CY-Vb-VSX" firstAttribute="top" secondItem="FXP-Fx-vgY" secondAttribute="bottom" constant="20" id="RKi-Vt-WLh"/>
                             <constraint firstItem="CwE-dG-82D" firstAttribute="bottom" secondItem="5CY-Vb-VSX" secondAttribute="bottom" id="gWd-VQ-eBl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CwE-dG-82D"/>

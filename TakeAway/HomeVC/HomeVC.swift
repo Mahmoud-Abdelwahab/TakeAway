@@ -56,7 +56,8 @@ class HomeVC: UIViewController {
     
     
     @IBAction func didTapCartBtn(_ sender: Any) {
-        
+        let cartVC = self.storyboard?.instantiateViewController(withIdentifier: "CartVC") as! CartVC
+              self.navigationController?.pushViewController(cartVC, animated: true)
         
     }
     

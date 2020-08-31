@@ -10,13 +10,30 @@ import UIKit
 
 
 class CartVC: UIViewController {
-
+    
     @IBOutlet weak var totalPriceLable: UILabel!
     @IBOutlet weak var cartTable: UITableView!
+    var cartList : [Products] = []
+    static var checkoutPrice : Double = 0.0
+    static var isChanged  = true
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
         confingureTableView()
+        loadCartProducts()
+        if CartVC.isChanged {
+            cartList.forEach {[weak self] (product) in
+                guard self != nil else{return}
+                CartVC.checkoutPrice += product.price.value!
+                self!.totalPriceLable.text = "\(CartVC.checkoutPrice) $"
+                CartVC.isChanged = false
+            }
+            
+        }else{
+            
+            totalPriceLable.text = "\(CartVC.checkoutPrice) $"
+        }
+        
     }
     
     
@@ -24,10 +41,12 @@ class CartVC: UIViewController {
     {
         cartTable.dataSource = self
         cartTable.delegate   = self
-      //  cartTable.register(<#T##nib: UINib?##UINib?#>, forCellReuseIdentifier: <#T##String#>)
+        cartTable.register(CartCell.nib(), forCellReuseIdentifier: CartCell.identifier)
     }
     
-    
+    private func  loadCartProducts(){
+        cartList = RealmDBManager.shared.getCartProducts()
+    }
     
     @IBAction func didTapCheckout(_ sender: UIButton) {
         
@@ -38,12 +57,59 @@ class CartVC: UIViewController {
 
 extension CartVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return cartList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = cartTable.dequeueReusableCell(withIdentifier: CartCell.identifier, for: indexPath) as! CartCell
+        let product = cartList[indexPath.row]
+        cell.product = product
+        
+        plusLogic(cell : cell )
+        minusLogic(cell : cell)
+        
+        return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    
+    private func plusLogic(cell : CartCell){
+        cell.plus = {[weak self] (product)in
+            guard let self = self else{return}
+            var number    = ((cell.amountLable.text)! as NSString).intValue
+            number += 1
+            cell.amount = "\(number)"
+            // let doublePrice =
+            // let oldVal = (self.totalPriceLable.text! as NSString).doubleValue
+            RealmDBManager.shared.updateProductCount(with: product, number: Int(number))
+            // let Val = Double(number) * product.price.value!
+            CartVC.checkoutPrice += product.price.value!
+            self.totalPriceLable.text = "\(CartVC.checkoutPrice)$"
+            print(number)
+            
+        }
+    }
+    
+    
+    private func minusLogic(cell : CartCell){
+        cell.minus = {[weak self] (product)in
+            guard let self = self else{return}
+            var number    = ((cell.amountLable.text)! as NSString).intValue
+            
+            print(number)
+            if number > 1 {
+                number -= 1
+                cell.amount = "\(number)"
+                CartVC.checkoutPrice -= product.price.value!
+                self.totalPriceLable.text = "\(CartVC.checkoutPrice)$"
+                RealmDBManager.shared.updateProductCount(with: product, number: Int(number))
+
+            }
+        }
+    }
     
 }

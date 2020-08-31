@@ -44,15 +44,19 @@ class ProductCell: UICollectionViewCell {
     func setupCell(with product: Products){
         
         productNameText.text = product.name
-        productPriceText.text =  "\(product.price)"
+        productPriceText.text =  "\(product.price.value ?? 0.0)$"
         descriptionLable.text = product.productDescription
-        if HomeVC.favoriteArray.contains(product){
+        if HomeVC.favoriteArray.contains(where: { (pro) -> Bool in
+            return pro.name == product.name
+        }){
         favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
         }else{
              favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
         }
         
-        if  RealmDBManager.shared.getCartProducts().contains(product){
+        if  RealmDBManager.shared.getCartProducts().contains(where: { (pro) -> Bool in
+            return pro.name == product.name
+        }){
              cartImage.setImage(UIImage(named: "fill-cart"), for: .normal)
         }else{
              cartImage.setImage(UIImage(named: "empty-cart"), for: .normal)

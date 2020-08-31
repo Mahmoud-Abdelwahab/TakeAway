@@ -146,7 +146,9 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
            
         }
         
-        if HomeVC.favoriteArray.contains(product!){
+        if HomeVC.favoriteArray.contains(where: { (pro) -> Bool in
+            return pro.name == product!.name
+        }){
                   cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
                    }else{
                          cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
@@ -264,8 +266,7 @@ extension ProductVC : AddToCartDelegate{
             //
               cell.cartImage.setImage(UIImage(named: "fill-cart"), for: .normal)
         }
-        let db = RealmDBManager.shared.getCartProducts()
-        print(db)
+        print(RealmDBManager.shared.getCartProducts())
     }
     
     

@@ -18,10 +18,10 @@ class Products : Object
     dynamic var categoryId: String? = nil
     dynamic var productDescription: String? = nil
     dynamic var imgURL: String? = nil
-    var timeStamp: Timestamp? = nil
-     dynamic var price =  RealmOptional<Double>()
+    var         timeStamp: Timestamp? = nil
+    dynamic var price =  RealmOptional<Double>()
     dynamic var stock =  RealmOptional<Int>()
-    
+    dynamic var amount =  RealmOptional<Int>(1)
     
     override class func ignoredProperties() -> [String] {
         return ["timeStamp"]
@@ -49,7 +49,7 @@ class Products : Object
         , productDescription : String
         , imgURL : String
         , timeStamp :Timestamp
-        , stock : Int) {
+        , stock : Int , amount : Int) {
         self.name                 = name
         self.categoryId           = categoryId
         self.price.value          = price
@@ -57,6 +57,7 @@ class Products : Object
         self.imgURL               = imgURL
         self.timeStamp            = timeStamp
         self.stock.value          = stock
+        self.amount.value         = amount
     }
     //        required  init?(coder aDecoder: NSCoder) {
     //
