@@ -212,6 +212,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (5.2.2)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -345,8 +346,10 @@ PODS:
   - Realm/Headers (5.3.5)
   - RealmSwift (5.3.5):
     - Realm (= 5.3.5)
+  - Stripe (19.4.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -354,10 +357,12 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
   - RealmSwift
+  - Stripe
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -381,9 +386,11 @@ SPEC REPOS:
     - PromisesObjC
     - Realm
     - RealmSwift
+    - Stripe
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: fc4cbf6f1592636431821ef9a3c557e4dfd9f268
   FirebaseAnalytics: 0ea640473474f036cabbc2576e20c2d63671c92f
@@ -407,7 +414,8 @@ SPEC CHECKSUMS:
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Realm: 2b52fcc86fc0ed3d75a56ac0eb1e73c4f1a60e16
   RealmSwift: a6ea2ea561039fc3833c08dec81371a9a3bb5ca6
+  Stripe: 92f1c73a9dbd3c54277ed06a1fea6e08f20414c6
 
-PODFILE CHECKSUM: f5650128256161c068f75a39132afc8fc199256d
+PODFILE CHECKSUM: 3cfd87ae57d5d94e2757c597986d712eddad158e
 
 COCOAPODS: 1.8.4

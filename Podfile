@@ -9,7 +9,8 @@ def shared_pods
     pod 'IQKeyboardManagerSwift'
     pod 'Kingfisher'
     pod 'RealmSwift'
-
+    pod 'Alamofire', '~> 5.2'
+    pod 'Stripe'
 end
 
 target 'TakeAway' do

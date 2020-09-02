@@ -8,16 +8,20 @@
 
 import UIKit
 import Firebase
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+Stripe.setDefaultPublishableKey("pk_test_51HMFS3DJkI5i9OkOTxCl1dHaXLSU1yPkTfyoFLzRZrl1GQC60FJrPLM4Io04R9qHBR7ZNLjGMLk3Sz0MnWv6yfMy00mRQV63ju")
        FirebaseApp.configure()
+        
         return true
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -32,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
 
 
 }

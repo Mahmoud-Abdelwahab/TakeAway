@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class CartVC: UIViewController {
     
     @IBOutlet weak var totalPriceLable: UILabel!
@@ -24,7 +23,7 @@ class CartVC: UIViewController {
         if CartVC.isChanged {
             cartList.forEach {[weak self] (product) in
                 guard self != nil else{return}
-                CartVC.checkoutPrice += product.price.value!
+                CartVC.checkoutPrice += ((product.price.value)! * Double(product.amount.value!))
                 self!.totalPriceLable.text = "\(CartVC.checkoutPrice) $"
                 CartVC.isChanged = false
             }
@@ -49,7 +48,9 @@ class CartVC: UIViewController {
     }
     
     @IBAction func didTapCheckout(_ sender: UIButton) {
-        
+        let payment =  StripePaymentVC()
+
+        navigationController?.pushViewController(payment, animated: true)
     }
     
 }

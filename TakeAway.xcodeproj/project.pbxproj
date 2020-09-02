@@ -47,6 +47,7 @@
 		BB9B87A524F38CE5000EFB25 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9B87A224F38CE5000EFB25 /* ProductCell.swift */; };
 		BB9B87A624F38CE5000EFB25 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9B87A324F38CE5000EFB25 /* ProductCell.xib */; };
 		BB9B87A724F38CE5000EFB25 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9B87A324F38CE5000EFB25 /* ProductCell.xib */; };
+		BBA2038424FDAC9400B16C83 /* StripePaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA2038324FDAC9400B16C83 /* StripePaymentVC.swift */; };
 		BBA64CD924F9966C00165747 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA64CD724F9966C00165747 /* CartCell.swift */; };
 		BBA64CDA24F9966C00165747 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA64CD824F9966C00165747 /* CartCell.xib */; };
 		BBA64CE524FA096600165747 /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA64CE424FA096600165747 /* RealmDBManager.swift */; };
@@ -68,6 +69,19 @@
 		BBD63AB924F4E414004AB598 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */; };
 		BBD63ABB24F4FCC0004AB598 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD63AB824F4E414004AB598 /* ProductDetailsVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BB1BAAD924FD6C0D0024EC31 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E6ADA6EF2B68E559A6268B1 /* Pods-TakeAwayAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeAwayAdmin.debug.xcconfig"; path = "Target Support Files/Pods-TakeAwayAdmin/Pods-TakeAwayAdmin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +117,7 @@
 		BB9B879F24F38CC3000EFB25 /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		BB9B87A224F38CE5000EFB25 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		BB9B87A324F38CE5000EFB25 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		BBA2038324FDAC9400B16C83 /* StripePaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripePaymentVC.swift; sourceTree = "<group>"; };
 		BBA64CD724F9966C00165747 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		BBA64CD824F9966C00165747 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 		BBA64CE424FA096600165747 /* RealmDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBManager.swift; sourceTree = "<group>"; };
@@ -174,6 +189,7 @@
 		BB0B058224F04BFD006AB838 /* TakeAway */ = {
 			isa = PBXGroup;
 			children = (
+				BBA2038224FDAC4E00B16C83 /* StripePayment */,
 				BBA64CE124FA08FA00165747 /* Repository */,
 				BBB764C724F378D000EBBD1B /* HomeVC */,
 				BB9B879E24F38CA0000EFB25 /* ProductVC */,
@@ -291,6 +307,14 @@
 			path = ProductVC;
 			sourceTree = "<group>";
 		};
+		BBA2038224FDAC4E00B16C83 /* StripePayment */ = {
+			isa = PBXGroup;
+			children = (
+				BBA2038324FDAC9400B16C83 /* StripePaymentVC.swift */,
+			);
+			path = StripePayment;
+			sourceTree = "<group>";
+		};
 		BBA64CD624F9962F00165747 /* CartCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +392,7 @@
 				BB0B057D24F04BFD006AB838 /* Frameworks */,
 				BB0B057E24F04BFD006AB838 /* Resources */,
 				E50555A647A40A1B44B1B1B7 /* [CP] Embed Pods Frameworks */,
+				BB1BAAD924FD6C0D0024EC31 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -573,6 +598,7 @@
 				BB7DF53224F714910053C69C /* CartVC.swift in Sources */,
 				BB9B87A424F38CE5000EFB25 /* ProductCell.swift in Sources */,
 				BB0B05B124F04CCD006AB838 /* Constants.swift in Sources */,
+				BBA2038424FDAC9400B16C83 /* StripePaymentVC.swift in Sources */,
 				BB9352A024F069DC00400913 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
