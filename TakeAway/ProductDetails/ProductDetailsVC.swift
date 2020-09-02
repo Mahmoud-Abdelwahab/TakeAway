@@ -25,6 +25,7 @@ class ProductDetailsVC: UIViewController {
     
     @IBAction func onAddProductToCartClicked(_ sender: Any) {
         
+    //      ProductVC.favoriteAndUnFavorite(with : product!)
     }
     
     private func configureForm(with product : Products) {
@@ -38,5 +39,8 @@ class ProductDetailsVC: UIViewController {
         productImage.kf.setImage(with:url)
         
     }
+    
+    
+    
     
 }

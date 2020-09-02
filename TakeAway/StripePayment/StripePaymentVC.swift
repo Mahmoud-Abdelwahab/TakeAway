@@ -11,10 +11,16 @@ import Stripe
 import Alamofire
 
 class StripePaymentVC: UIViewController , STPAuthenticationContext {
-  
+    
     
     let backendURL : String = "https://mystrip.herokuapp.com/"
-    lazy var activityIndicatore = UIActivityIndicatorView()
+    lazy var activityIndicatore : UIActivityIndicatorView = {
+        let activityIndicatore = UIActivityIndicatorView()
+        activityIndicatore.color = .white
+        activityIndicatore.translatesAutoresizingMaskIntoConstraints = false
+        
+        return activityIndicatore
+    }()
     lazy var stackView : UIStackView = {
         let stack = UIStackView()
         stack.alignment    = .fill
@@ -37,6 +43,7 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
     
     lazy var cardField : STPPaymentCardTextField = {
         let cartField  = STPPaymentCardTextField()
+        cartField.textColor = .white
         cartField.translatesAutoresizingMaskIntoConstraints = false
         return cartField
     }()
@@ -45,11 +52,12 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
     lazy var payBtn : UIButton = {
         let btn = UIButton()
         // btn.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        btn.backgroundColor = .black
-        btn.layer.borderColor = #colorLiteral(red: 1, green: 0.852338399, blue: 0.2632973031, alpha: 1)
-        btn.layer.borderWidth = 2
+        btn.backgroundColor    = #colorLiteral(red: 1, green: 0.852338399, blue: 0.2632973031, alpha: 1)
+        btn.layer.borderColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        btn.layer.borderWidth  = 2
+        btn.layer.cornerRadius = 12
         btn.setTitle("Palce Order", for: .normal)
-        btn.setTitleColor(.yellow, for: .normal)
+        btn.setTitleColor(.black, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(didTapPalceOrder), for: .touchUpInside)
         return btn
@@ -57,9 +65,10 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black
         
         title = "Card Field"
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.black
         view.addSubview(cardField)
         edgesForExtendedLayout = []
         
@@ -72,6 +81,7 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
     
     func  setupUI(){
         view.addSubview(stackView)
+        view.addSubview(activityIndicatore)
         stackView.addArrangedSubview(imagelogo)
         stackView.addArrangedSubview(cardField)
         stackView.addArrangedSubview(payBtn)
@@ -82,7 +92,14 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
             stackView.heightAnchor.constraint(equalToConstant: 400) ,
             
             imagelogo.heightAnchor.constraint(equalToConstant: 60),
-            imagelogo.widthAnchor.constraint(equalToConstant: 60)
+            imagelogo.widthAnchor.constraint(equalToConstant: 60),
+            
+            payBtn.heightAnchor.constraint(equalToConstant: 70),
+            payBtn.widthAnchor.constraint(equalToConstant: 300),
+            activityIndicatore.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicatore.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicatore.heightAnchor.constraint(equalToConstant: 70),
+            activityIndicatore.widthAnchor.constraint(equalToConstant: 70),
         ])
         
     }
@@ -106,9 +123,9 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
                     print("Incorrect Response")
                     return
                 }
-             // success
+                // success
                 let clientSecret = responseDictinary["secret"] as! String
-              self.stopeLoading()
+                self.stopeLoading()
                 
                 // now  i get cleint secret from the server
                 // 1- i wanna confirm the payment intent  using STPPaymentHandler
@@ -120,7 +137,7 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
                 paymentIntentParams.paymentMethodParams = paymentMehodeParams
                 
                 STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: self) { [weak self](status, paymentIntent, error) in
-                      guard let self = self else{return}
+                    guard let self = self else{return}
                     self.stopeLoading()
                     var resultString = ""
                     
@@ -137,14 +154,16 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
                     }
                     
                     print(resultString)
-                   // self.showAlert(title : "Alert" , message : resultString)
+                    // self.showAlert(title : "Alert" , message : resultString)
                     /// here i  will clear the realm cart
                     
                     let alert = UIAlertController(title: "Alert" , message: resultString, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {[weak self] (UIAlertAction) in
+                        guard let self = self else{return}
+                        CartVC.isChanged = true // to callculate the initial sallary for all the products in the card in the first time
                         RealmDBManager.shared.deleteAllProducts()
-                                          CartVC.checkoutPrice = 0.0
-                                          self.popViewControllerss(popViews: 2)
+                        CartVC.checkoutPrice = 0.0
+                        self.popViewControllerss(popViews: 2)
                     }))
                     self.present(alert , animated:  true)
                 }
@@ -157,8 +176,8 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
         if self.navigationController!.viewControllers.count > popViews
         {
             let vc = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - popViews - 1]
-             // -1 cause the count starts from 1 buth the stack starts from 0 index 
-             self.navigationController?.popToViewController(vc, animated: animated)
+            // -1 cause the count starts from 1 buth the stack starts from 0 index
+            self.navigationController?.popToViewController(vc, animated: animated)
         }
     }
     
@@ -185,10 +204,10 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
     
     // MARK: STPAuthenticationContext
     func authenticationPresentingViewController() -> UIViewController {
-          // this methode show which VC presents the authentication UI
+        // this methode show which VC presents the authentication UI
         return self
-      }
-      
+    }
+    
     
     @objc func done() {
         dismiss(animated: true, completion: nil)
@@ -220,6 +239,6 @@ class StripePaymentVC: UIViewController , STPAuthenticationContext {
         activityIndicatore.isHidden = true
     }
     
-   
+    
     
 }

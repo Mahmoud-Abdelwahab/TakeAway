@@ -18,7 +18,7 @@ class ProductVC: UIViewController  {
     var isSearchActive : Bool = false
     var isShowFavorite : Bool = false
     var categoryId : String?
-    
+    var cell : ProductCell?
     @IBOutlet weak var productCollection: UICollectionView!
     
     
@@ -113,57 +113,72 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = productCollection.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
+         cell = productCollection.dequeueReusableCell(withReuseIdentifier: ProductCell.identifier, for: indexPath) as! ProductCell
         
-        var product : Products?
-        
-        cell.addToCartDelegate = self
-        
-        if isSearchActive {
-              product = filteredProductList[indexPath.row]
-            cell.product  = product
-        }else{
-            product = productList[indexPath.row]
-            cell.product = product
-        }
-       
-        cell.favortie = { [weak self] in
-            guard let self = self else {return}
-         
-    
-            if self.isSearchActive {
+        if let cell = cell {
+            var product : Products?
                 
-                 product = self.filteredProductList[indexPath.row]
-                cell.product  = product
-                self.favoriteAndUnFavorite(with : product! ,cell : cell )
+                cell.addToCartDelegate = self
                 
-                   }else{
-               product = self.productList[indexPath.row]
-                cell.product = product
-                self.favoriteAndUnFavorite(with : product! , cell : cell )
+                if isSearchActive {
+                      product = filteredProductList[indexPath.row]
+                    cell.product  = product
+                }else{
+                    product = productList[indexPath.row]
+                    cell.product = product
+                }
+               
+                cell.favortie = { [weak self] in
+                    guard let self = self else {return}
+                 
+            
+                    if self.isSearchActive {
+                        
+                         product = self.filteredProductList[indexPath.row]
+                        cell.product  = product
+                        if ProductVC.favoriteAndUnFavorite(with : product!){
+                             cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+                        }else{
+                            cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
 
-                   }
-           
+                        }
+                        
+                           }else{
+                       product = self.productList[indexPath.row]
+                        cell.product = product
+                        if ProductVC.favoriteAndUnFavorite(with : product!){
+                             cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+                        }else{
+                            cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
+
+                        }
+
+                           }
+                   
+                }
+                
+                if HomeVC.favoriteArray.contains(where: { (pro) -> Bool in
+                    return pro.name == product!.name
+                }){
+                          cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+                           }else{
+                                 cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
+                           }
+                           
+                if  RealmDBManager.shared.getCartProducts().contains(where: { (pro) -> Bool in
+                    return pro.name == product!.name
+                }) {
+                                 cell.cartImage.setImage(UIImage(named: "fill-cart"), for: .normal)
+                           }else{
+                                 cell.cartImage.setImage(UIImage(named: "empty-cart"), for: .normal)
+                           }
+                      
+                
+                return cell
+        }else{
+            return UICollectionViewCell()
         }
         
-        if HomeVC.favoriteArray.contains(where: { (pro) -> Bool in
-            return pro.name == product!.name
-        }){
-                  cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
-                   }else{
-                         cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
-                   }
-                   
-        if  RealmDBManager.shared.getCartProducts().contains(where: { (pro) -> Bool in
-            return pro.name == product!.name
-        }) {
-                         cell.cartImage.setImage(UIImage(named: "fill-cart"), for: .normal)
-                   }else{
-                         cell.cartImage.setImage(UIImage(named: "empty-cart"), for: .normal)
-                   }
-              
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -175,9 +190,10 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
     }
  
     
-    func favoriteAndUnFavorite(with product : Products ,cell : ProductCell ) {
+     static func favoriteAndUnFavorite(with product : Products)->Bool {
         
-             
+        var isFill = false
+       
         if  HomeVC.favoriteArray.count>0 {
             // there is some favorite
             if HomeVC.favoriteArray.contains(product){
@@ -188,36 +204,39 @@ extension ProductVC : UICollectionViewDelegate , UICollectionViewDataSource {
                let index = HomeVC.favoriteArray.firstIndex(of: product)
                 HomeVC.favoriteArray.remove(at: index!)
                 self.removeProductFromFirestore(with : product)
-                cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
+              
+               // cell.favoriteStare.setImage(UIImage(named: "empty-star"), for: .normal)
             }else{
                 // product is newly favorited add it to the userdefault
                 HomeVC.favoriteArray.append(product)
                  self.saveProductToFirestore( with  : product)
-                 cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+                isFill = true
+                 //cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
             }
            
-           // cell.favoriteStare.imageView?.image = UIImage(named: )
+            // cell.favoriteStare.imageView?.image = UIImage(named: )
         }else {
             //the favorite is empty
             // create array of products and store it in the userdefault
             
             HomeVC.favoriteArray.append(product)
             saveProductToFirestore( with  : product)
-            
-            cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
+             isFill = true
+           // cell.favoriteStare.setImage(UIImage(named: "fill-star"), for: .normal)
         }
         
+        return isFill
         
     }
     
     
-    func saveProductToFirestore( with product : Products){
+    static func saveProductToFirestore( with product : Products){
         let fStoreRef = Firestore.firestore().collection("Users").document(Auth.auth().currentUser!.uid).collection("Favorites")
         let data  = Products.productToDictionary(with: product)
         fStoreRef.document(product.name!).setData(data)
     }
     
-    func removeProductFromFirestore(with product : Products){
+    static func removeProductFromFirestore(with product : Products){
          let fStoreRef = Firestore.firestore().collection("Users").document(Auth.auth().currentUser!.uid).collection("Favorites")
         fStoreRef.document(product.name!).delete()
         
@@ -256,9 +275,11 @@ extension ProductVC : AddToCartDelegate{
     
     
     func didTapAddToCart(product: Products , cell : ProductCell) {
+         CartVC.isChanged = true
         if checkIfPorductExists(product : product){
             // product exists
             RealmDBManager.shared.deleteOneProduct(product: product)
+           
               cell.cartImage.setImage(UIImage(named: "empty-cart"), for: .normal)
         }else{
             //product not exists

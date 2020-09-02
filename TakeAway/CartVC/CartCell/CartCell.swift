@@ -42,7 +42,7 @@ class CartCell: UITableViewCell {
         priceLable.text = "\(product.price.value ?? 0.0)$"
         amountLable.text = "\(product.amount.value ?? 1)"
         
-        guard let imageURL = URL(string: product.imgURL!) else {  return }
+        guard let image = product.imgURL , !image.isEmpty ,  let imageURL = URL(string:image )  else {  return }
         productImage.kf.setImage(with: imageURL)
     }
     

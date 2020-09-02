@@ -16,11 +16,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="307" height="98"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-Xb-BG2">
-                        <rect key="frame" x="5" y="5" width="295" height="88"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-Xb-BG2">
+                        <rect key="frame" x="2" y="2" width="303" height="94"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3PP-Tk-iix">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3PP-Tk-iix">
                         <rect key="frame" x="8" y="4" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="9MS-vV-XKm"/>
@@ -80,18 +80,22 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="pMi-Xb-BG2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-50" id="7q0-nl-sBc"/>
+                    <constraint firstItem="pMi-Xb-BG2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="5Pz-a6-q0x"/>
+                    <constraint firstAttribute="bottom" secondItem="pMi-Xb-BG2" secondAttribute="bottom" constant="2" id="AiV-KG-814"/>
                     <constraint firstAttribute="bottom" secondItem="Ifz-c5-0H0" secondAttribute="bottom" constant="10" id="Cgi-qW-Na5"/>
-                    <constraint firstItem="pMi-Xb-BG2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-11" id="HiO-yU-84D"/>
+                    <constraint firstAttribute="bottom" secondItem="pMi-Xb-BG2" secondAttribute="bottom" constant="2" id="K0X-72-JaC"/>
                     <constraint firstItem="3PP-Tk-iix" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="K7I-Z9-xXq"/>
-                    <constraint firstAttribute="trailing" secondItem="pkP-PY-qLP" secondAttribute="trailing" constant="8" id="KWW-Oi-Fgs"/>
+                    <constraint firstAttribute="trailing" secondItem="pkP-PY-qLP" secondAttribute="trailing" constant="157" id="KWW-Oi-Fgs"/>
                     <constraint firstItem="3PP-Tk-iix" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OgC-SA-HCF"/>
-                    <constraint firstItem="pMi-Xb-BG2" firstAttribute="centerY" secondItem="3PP-Tk-iix" secondAttribute="centerY" id="YHT-zf-oay"/>
                     <constraint firstItem="Ifz-c5-0H0" firstAttribute="leading" secondItem="3PP-Tk-iix" secondAttribute="trailing" constant="55" id="YLh-bC-too"/>
                     <constraint firstItem="pkP-PY-qLP" firstAttribute="leading" secondItem="3PP-Tk-iix" secondAttribute="trailing" constant="7" id="aYy-uT-XXP"/>
+                    <constraint firstItem="pMi-Xb-BG2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="akx-Si-SpA"/>
+                    <constraint firstAttribute="trailing" secondItem="pMi-Xb-BG2" secondAttribute="trailing" constant="2" id="bVk-Vf-fZm"/>
                     <constraint firstItem="pkP-PY-qLP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="iX4-Zc-k73"/>
-                    <constraint firstItem="Ifz-c5-0H0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="nZj-Qj-UEQ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="pMi-Xb-BG2" secondAttribute="trailing" constant="-9" id="zhT-ru-lBc"/>
+                    <constraint firstAttribute="trailing" secondItem="pMi-Xb-BG2" secondAttribute="trailing" constant="2" id="jzg-k2-KGT"/>
+                    <constraint firstItem="Ifz-c5-0H0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="48.5" id="nZj-Qj-UEQ"/>
+                    <constraint firstItem="pMi-Xb-BG2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="vLL-98-RNf"/>
+                    <constraint firstItem="pMi-Xb-BG2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="zyZ-Hr-e6Q"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -99,8 +103,9 @@
                 <outlet property="amountLable" destination="w2m-5u-UEb" id="ZFi-5v-VHh"/>
                 <outlet property="nameLable" destination="18m-n5-Wtk" id="erf-Lu-OTC"/>
                 <outlet property="priceLable" destination="5ls-eW-fOY" id="jUW-nW-3Nj"/>
+                <outlet property="productImage" destination="3PP-Tk-iix" id="YMO-av-1Lf"/>
             </connections>
-            <point key="canvasLocation" x="131.15942028985509" y="103.79464285714285"/>
+            <point key="canvasLocation" x="219.56521739130437" y="-35.491071428571423"/>
         </tableViewCell>
     </objects>
     <resources>

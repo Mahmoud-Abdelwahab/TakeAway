@@ -10,6 +10,7 @@ import UIKit
 
 class CartVC: UIViewController {
     
+    @IBOutlet weak var checkoutViewOutlite: UIView!
     @IBOutlet weak var totalPriceLable: UILabel!
     @IBOutlet weak var cartTable: UITableView!
     var cartList : [Products] = []
@@ -18,11 +19,15 @@ class CartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkoutViewOutlite.layer.cornerRadius = 12
+    
         confingureTableView()
         loadCartProducts()
         if CartVC.isChanged {
+              CartVC.checkoutPrice = 0.0
             cartList.forEach {[weak self] (product) in
                 guard self != nil else{return}
+              
                 CartVC.checkoutPrice += ((product.price.value)! * Double(product.amount.value!))
                 self!.totalPriceLable.text = "\(CartVC.checkoutPrice) $"
                 CartVC.isChanged = false
