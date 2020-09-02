@@ -10,20 +10,12 @@ import UIKit
 
 extension UIViewController{
     
-
+    func showAlert(title : String , message : String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert , animated:  true)
+    }
+    
     
 }
 
-
-extension Results {
-    func toArray<T>(ofType: T.Type) -> [T] {
-        var array = [T]()
-        for i in 0 ..< count {
-            if let result = self[i] as? T {
-                array.append(result)
-            }
-        }
-
-        return array
-    }
-}

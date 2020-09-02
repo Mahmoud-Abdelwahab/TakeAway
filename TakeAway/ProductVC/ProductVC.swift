@@ -52,7 +52,7 @@ class ProductVC: UIViewController  {
         let interItemSpacing : CGFloat    = 5
         
         let width  = (productCollection.frame.width - (padding * 2 ) - ((numberOfItemPerRow - 1)*interItemSpacing)) / numberOfItemPerRow
-        let height  = width / 2
+        let height  = width - 40
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.itemSize = CGSize(width: width, height: height)
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
@@ -90,7 +90,7 @@ class ProductVC: UIViewController  {
         mySearchControler.searchBar.placeholder                 = "Search By Name"
         navigationItem.searchController                         = mySearchControler // naviagtion item has a search controler and it's optional
         mySearchControler.searchBar.delegate                    = self /// for handeling cancel button
-        
+        mySearchControler.searchBar.searchTextField.backgroundColor             = .white
         mySearchControler.obscuresBackgroundDuringPresentation  = false
         // this for hidding the littel blureing which appear over the collectionView when u type somthing in the searchBar
         

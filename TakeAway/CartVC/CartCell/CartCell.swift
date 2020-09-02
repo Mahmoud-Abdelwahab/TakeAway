@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CartCell: UITableViewCell {
     
+    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var priceLable: UILabel!
     @IBOutlet weak var amountLable: UILabel!
     @IBOutlet weak var nameLable: UILabel!
@@ -17,7 +19,8 @@ class CartCell: UITableViewCell {
     var plus : ((_ product : Products)->())?
     var minus : ((_ product : Products)->())?
     var total : (()->())?
-
+    
+    
     
     var product:Products?{
         didSet{
@@ -28,8 +31,8 @@ class CartCell: UITableViewCell {
     
     var amount : String? {
         didSet{
-              guard amount != nil else{return}
-             amountLable.text = amount
+            guard amount != nil else{return}
+            amountLable.text = amount
         }
     }
     
@@ -38,22 +41,27 @@ class CartCell: UITableViewCell {
         nameLable.text = product.name
         priceLable.text = "\(product.price.value ?? 0.0)$"
         amountLable.text = "\(product.amount.value ?? 1)"
+        
+        guard let imageURL = URL(string: product.imgURL!) else {  return }
+        productImage.kf.setImage(with: imageURL)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.layer.cornerRadius = 12
     }
     
     
     static func nib()->UINib{
         return UINib(nibName: CartCell.identifier, bundle: nil)
     }
-
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     

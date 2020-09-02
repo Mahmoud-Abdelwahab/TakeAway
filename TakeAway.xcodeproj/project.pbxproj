@@ -36,6 +36,11 @@
 		BB9352B224F10C6900400913 /* UIViewControllerEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9352B124F10C6900400913 /* UIViewControllerEXT.swift */; };
 		BB9352B424F1403300400913 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9352B324F1403300400913 /* StringExt.swift */; };
 		BB9352B524F1403300400913 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9352B324F1403300400913 /* StringExt.swift */; };
+		BB95761B24FF80BF0042C580 /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA64CE424FA096600165747 /* RealmDBManager.swift */; };
+		BB95761C24FF810D0042C580 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7DF53124F714910053C69C /* CartVC.swift */; };
+		BB95761D24FF81140042C580 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA64CD724F9966C00165747 /* CartCell.swift */; };
+		BB95761E24FF81300042C580 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA64CD824F9966C00165747 /* CartCell.xib */; };
+		BB95761F24FF81AF0042C580 /* StripePaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA2038324FDAC9400B16C83 /* StripePaymentVC.swift */; };
 		BB9B879524F37DD1000EFB25 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9B879424F37DD1000EFB25 /* Category.swift */; };
 		BB9B879624F37DD1000EFB25 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9B879424F37DD1000EFB25 /* Category.swift */; };
 		BB9B879924F38C42000EFB25 /* AddCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9B879824F38C42000EFB25 /* AddCategoryVC.swift */; };
@@ -483,6 +488,7 @@
 				BBB764CD24F3793D00EBBD1B /* HomeCell.xib in Resources */,
 				BB9B87A724F38CE5000EFB25 /* ProductCell.xib in Resources */,
 				BB0B05AA24F04CA0006AB838 /* LaunchScreen.storyboard in Resources */,
+				BB95761E24FF81300042C580 /* CartCell.xib in Resources */,
 				BB9352A224F069EE00400913 /* Assets.xcassets in Resources */,
 				BB9352AF24F1084200400913 /* GoogleService-Info.plist in Resources */,
 				BB0B05A524F04C9F006AB838 /* Main.storyboard in Resources */,
@@ -618,6 +624,8 @@
 				BBB764B824F35EF600EBBD1B /* IDismissLoginScreenDelegate.swift in Sources */,
 				BB9B879D24F38C86000EFB25 /* AddProductVC.swift in Sources */,
 				BB9B879B24F38C66000EFB25 /* AdminProductVC.swift in Sources */,
+				BB95761C24FF810D0042C580 /* CartVC.swift in Sources */,
+				BB95761F24FF81AF0042C580 /* StripePaymentVC.swift in Sources */,
 				BB0B059E24F04C9F006AB838 /* AppDelegate.swift in Sources */,
 				BB0B05A024F04C9F006AB838 /* SceneDelegate.swift in Sources */,
 				BBB764B224F28EE400EBBD1B /* Products.swift in Sources */,
@@ -625,7 +633,9 @@
 				BB0B05B224F04CCD006AB838 /* Constants.swift in Sources */,
 				BBB764C424F3695100EBBD1B /* ForgetPasswordVC.swift in Sources */,
 				BB9B87A524F38CE5000EFB25 /* ProductCell.swift in Sources */,
+				BB95761D24FF81140042C580 /* CartCell.swift in Sources */,
 				BB9B879924F38C42000EFB25 /* AddCategoryVC.swift in Sources */,
+				BB95761B24FF80BF0042C580 /* RealmDBManager.swift in Sources */,
 				BB9352A124F069DC00400913 /* LoginVC.swift in Sources */,
 				BBD63ABB24F4FCC0004AB598 /* ProductDetailsVC.swift in Sources */,
 			);

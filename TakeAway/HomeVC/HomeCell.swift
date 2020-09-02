@@ -24,6 +24,8 @@ class HomeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.layer.cornerRadius = 12
+        categoryImage.layer.cornerRadius = 12
     }
 
     
