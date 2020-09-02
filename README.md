@@ -3,7 +3,7 @@
 ![87](https://user-images.githubusercontent.com/17813115/91970059-6273ac00-ed17-11ea-877c-3206a774acb3.png)
 
 ## ScreenShots:
-
+               
 ![Screen Shot 2020-09-02 at 6 19 42 PM](https://user-images.githubusercontent.com/17813115/92010482-24dc4680-ed4a-11ea-9e8a-4d664eb1f30e.png)
 ![Screen Shot 2020-09-02 at 6 15 29 PM](https://user-images.githubusercontent.com/17813115/92010490-273ea080-ed4a-11ea-84f2-d1792b85fdd5.png)
 ![Screen Shot 2020-09-02 at 6 13 40 PM](https://user-images.githubusercontent.com/17813115/92010492-27d73700-ed4a-11ea-8c35-aec8b30acfdf.png)
@@ -28,15 +28,15 @@
 * You can Pay all products in the card by your visa throught online payment 
 * Using the pagination in displaying the products to avoid memory leaks 
 
-* Tools 
+# Tools 
  - Xcode 11.3
  - Heroku for the webservice and i tried firebase cloud function also 
  
-##libraries 
-    - Stripe 
-    - Firestore 
-    - Firestorage 
-    - Firebase cloude Function 
-    - kingFisher 
-    - Alamofire 
+ ## libraries 
+  - Stripe 
+  - Firestore 
+  - Firestorage 
+  - Firebase cloude Function 
+  - kingFisher 
+  - Alamofire 
  
