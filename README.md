@@ -32,11 +32,11 @@
  - Xcode 11.3
  - Heroku for the webservice and i tried firebase cloud function also 
  
-*libraries 
- - Stripe 
- - Firestore 
- - Firestorage 
- - Firebase cloude Function 
- - kingFisher 
- - Alamofire 
+ #libraries 
+    - Stripe 
+    - Firestore 
+    - Firestorage 
+    - Firebase cloude Function 
+    - kingFisher 
+    - Alamofire 
  
